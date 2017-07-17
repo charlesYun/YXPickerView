@@ -1,15 +1,15 @@
 //
-//  YXPickerView.m
-//  YXPickerView
+//  YXAddressPickerView.m
+//  YXAddressPickerView
 //
 //  Created by 曹云霄 on 2017/7/14.
 //  Copyright © 2017年 曹云霄. All rights reserved.
 //
 
-#import "YXPickerView.h"
+#import "YXAddressPickerView.h"
 #import "YXCityModel.h"
 
-@interface YXPickerView()<UIPickerViewDelegate,UIPickerViewDataSource>
+@interface YXAddressPickerView()<UIPickerViewDelegate,UIPickerViewDataSource>
 
 @property (nonatomic, strong) UIView *bgView;
 @property (nonatomic, strong) UIView *containerView;
@@ -34,7 +34,7 @@
 @end
 
 
-@implementation YXPickerView
+@implementation YXAddressPickerView
 
 #pragma mark -lazy
 
@@ -129,7 +129,7 @@
 #pragma mark -解析省市区JSON数据
 - (void)getDatas
 {
-    NSBundle *bundlePath = [NSBundle bundleWithPath:[[NSBundle bundleForClass:[YXPickerView class]] pathForResource:@"YXBundle" ofType:@"bundle"]];
+    NSBundle *bundlePath = [NSBundle bundleWithPath:[[NSBundle bundleForClass:[YXAddressPickerView class]] pathForResource:@"YXBundle" ofType:@"bundle"]];
     NSData *data = [NSData dataWithContentsOfFile:[bundlePath pathForResource:@"city" ofType:@"json"]];
     NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
     NSArray *provinceArray = dict[@"root"][@"province"];

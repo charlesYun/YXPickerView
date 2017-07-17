@@ -20,13 +20,22 @@
     return manager;
 }
 
-- (YXPickerView *)addressPickerView
+- (YXAddressPickerView *)addressPickerView
 {
     if (!_addressPickerView) {
-        _addressPickerView = [[YXPickerView alloc] init];
+        _addressPickerView = [[YXAddressPickerView alloc] init];
     }
     return _addressPickerView;
 }
+
+- (YXDatePickerView *)datePickerView
+{
+    if (!_datePickerView) {
+        _datePickerView = [[YXDatePickerView alloc] init];
+    }
+    return _datePickerView;
+}
+
 
 
 - (void)showAddressPickerView:(UIColor *)tintColor defaultAddress:(NSString *)address commitBlock:(void (^)(NSString *, NSString *))commitBlock cancelBlock:(void (^)())cancelBlock
@@ -39,8 +48,14 @@
 }
 
 
-
-
+- (void)showDatePickerView:(UIColor *)tintColor datePickerModel:(UIDatePickerMode)model minimumDate:(NSDate *)minimumDate maximumDate:(NSDate *)maximumDate defaultDate:(NSString *)dateString commitBlock:(void (^)(NSString *))commitBlock cancelBlock:(void (^)())cancelBlock
+{
+    [self.datePickerView showDatePickerView:tintColor datePickerModel:model minimumDate:minimumDate maximumDate:maximumDate defaultDate:dateString commitBlock:^(NSString *date) {
+        commitBlock(date);
+    } cancelBlock:^{
+        cancelBlock();
+    }];
+}
 
 
 

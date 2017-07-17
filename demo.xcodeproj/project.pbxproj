@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		2943F9081F1C5B82000B5D94 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 2943F9071F1C5B82000B5D94 /* Podfile */; };
+		2943F9131F1C6B4E000B5D94 /* YXBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2943F90A1F1C6B4E000B5D94 /* YXBundle.bundle */; };
+		2943F9141F1C6B4E000B5D94 /* YXCityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2943F90C1F1C6B4E000B5D94 /* YXCityModel.m */; };
+		2943F9151F1C6B4E000B5D94 /* YXPickerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2943F90E1F1C6B4E000B5D94 /* YXPickerManager.m */; };
+		2943F9161F1C6B4E000B5D94 /* YXAddressPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2943F9101F1C6B4E000B5D94 /* YXAddressPickerView.m */; };
+		2943F9171F1C6B4E000B5D94 /* YXToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 2943F9121F1C6B4E000B5D94 /* YXToolbar.m */; };
+		2943F91A1F1C6CF2000B5D94 /* YXDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2943F9191F1C6CF2000B5D94 /* YXDatePickerView.m */; };
 		299321901F1C5440001DBDE3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2993217C1F1C5440001DBDE3 /* AppDelegate.m */; };
 		299321911F1C5440001DBDE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2993217D1F1C5440001DBDE3 /* Assets.xcassets */; };
 		299321921F1C5440001DBDE3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2993217E1F1C5440001DBDE3 /* LaunchScreen.storyboard */; };
@@ -20,6 +26,17 @@
 
 /* Begin PBXFileReference section */
 		2943F9071F1C5B82000B5D94 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		2943F90A1F1C6B4E000B5D94 /* YXBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = YXBundle.bundle; sourceTree = "<group>"; };
+		2943F90B1F1C6B4E000B5D94 /* YXCityModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXCityModel.h; sourceTree = "<group>"; };
+		2943F90C1F1C6B4E000B5D94 /* YXCityModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXCityModel.m; sourceTree = "<group>"; };
+		2943F90D1F1C6B4E000B5D94 /* YXPickerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXPickerManager.h; sourceTree = "<group>"; };
+		2943F90E1F1C6B4E000B5D94 /* YXPickerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXPickerManager.m; sourceTree = "<group>"; };
+		2943F90F1F1C6B4E000B5D94 /* YXAddressPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXAddressPickerView.h; sourceTree = "<group>"; };
+		2943F9101F1C6B4E000B5D94 /* YXAddressPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXAddressPickerView.m; sourceTree = "<group>"; };
+		2943F9111F1C6B4E000B5D94 /* YXToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXToolbar.h; sourceTree = "<group>"; };
+		2943F9121F1C6B4E000B5D94 /* YXToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXToolbar.m; sourceTree = "<group>"; };
+		2943F9181F1C6CF2000B5D94 /* YXDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXDatePickerView.h; sourceTree = "<group>"; };
+		2943F9191F1C6CF2000B5D94 /* YXDatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXDatePickerView.m; sourceTree = "<group>"; };
 		299321211F189972001DBDE3 /* demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2993217B1F1C5440001DBDE3 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2993217C1F1C5440001DBDE3 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -47,6 +64,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2943F9091F1C6B4E000B5D94 /* YXPickerView */ = {
+			isa = PBXGroup;
+			children = (
+				2943F90A1F1C6B4E000B5D94 /* YXBundle.bundle */,
+				2943F90B1F1C6B4E000B5D94 /* YXCityModel.h */,
+				2943F90C1F1C6B4E000B5D94 /* YXCityModel.m */,
+				2943F90D1F1C6B4E000B5D94 /* YXPickerManager.h */,
+				2943F90E1F1C6B4E000B5D94 /* YXPickerManager.m */,
+				2943F90F1F1C6B4E000B5D94 /* YXAddressPickerView.h */,
+				2943F9101F1C6B4E000B5D94 /* YXAddressPickerView.m */,
+				2943F9181F1C6CF2000B5D94 /* YXDatePickerView.h */,
+				2943F9191F1C6CF2000B5D94 /* YXDatePickerView.m */,
+				2943F9111F1C6B4E000B5D94 /* YXToolbar.h */,
+				2943F9121F1C6B4E000B5D94 /* YXToolbar.m */,
+			);
+			path = YXPickerView;
+			sourceTree = "<group>";
+		};
 		299321181F189972001DBDE3 = {
 			isa = PBXGroup;
 			children = (
@@ -69,6 +104,7 @@
 		2993217A1F1C5440001DBDE3 /* demo */ = {
 			isa = PBXGroup;
 			children = (
+				2943F9091F1C6B4E000B5D94 /* YXPickerView */,
 				2993217B1F1C5440001DBDE3 /* AppDelegate.h */,
 				2993217C1F1C5440001DBDE3 /* AppDelegate.m */,
 				2993217D1F1C5440001DBDE3 /* Assets.xcassets */,
@@ -163,6 +199,7 @@
 			files = (
 				2943F9081F1C5B82000B5D94 /* Podfile in Resources */,
 				299321941F1C5440001DBDE3 /* Info.plist in Resources */,
+				2943F9131F1C6B4E000B5D94 /* YXBundle.bundle in Resources */,
 				299321931F1C5440001DBDE3 /* Main.storyboard in Resources */,
 				299321911F1C5440001DBDE3 /* Assets.xcassets in Resources */,
 				299321921F1C5440001DBDE3 /* LaunchScreen.storyboard in Resources */,
@@ -225,8 +262,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				299321961F1C5440001DBDE3 /* ViewController.m in Sources */,
+				2943F9161F1C6B4E000B5D94 /* YXAddressPickerView.m in Sources */,
+				2943F9171F1C6B4E000B5D94 /* YXToolbar.m in Sources */,
 				299321951F1C5440001DBDE3 /* main.m in Sources */,
 				299321901F1C5440001DBDE3 /* AppDelegate.m in Sources */,
+				2943F91A1F1C6CF2000B5D94 /* YXDatePickerView.m in Sources */,
+				2943F9151F1C6B4E000B5D94 /* YXPickerManager.m in Sources */,
+				2943F9141F1C6B4E000B5D94 /* YXCityModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
