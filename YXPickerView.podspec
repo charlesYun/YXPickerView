@@ -11,7 +11,6 @@ Pod::Spec.new do |s|
   s.author       = { 'Matej caoyunxiao' => 'chinacgcgcg@163.com' }
   s.source       = { :git => "https://github.com/caoyunxiao/YXPickerView.git", :tag => "0.0.2" }
   s.ios.deployment_target = '8.0'
-  s.tvos.deployment_target = '9.0'
   s.source_files = "YXPickerView/*.{h,m}"
   s.requires_arc = true
   s.resources = "YXPickerView/YXBundle.bundle"
