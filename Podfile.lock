@@ -1,12 +1,12 @@
 PODS:
-  - YXPickerView (0.0.2)
+  - YXPickerView (0.0.3)
 
 DEPENDENCIES:
-  - YXPickerView (~> 0.0.2)
+  - YXPickerView (~> 0.0.3)
 
 SPEC CHECKSUMS:
-  YXPickerView: 7fcfc8e5654bbb2b431f81cd46df666dfe802f47
+  YXPickerView: c4bd64f27239e9b44b2103c9d7797f6fe2827fa9
 
-PODFILE CHECKSUM: b911396202dc89bc868311517d404dcee5d3995b
+PODFILE CHECKSUM: cb8d7d515f0245d566348a8aabef47d0b406cdee
 
 COCOAPODS: 1.2.1
