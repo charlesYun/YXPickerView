@@ -1,16 +1,18 @@
 
 Pod::Spec.new do |s|
   s.name         = "YXPickerView"
-  s.version      = "0.0.1"
-  s.summary      = "caoyunxiao"
+  s.version      = "0.0.2"
+  s.summary      = "省市区选择"
   s.description  = <<-DESC
-                   caoyunxiao All rights reserved
+                    YXPickerView是选择省市区的封装，只为使用更简单。
                    DESC
-  s.homepage     = "https://github.com/caoyunxiao/YXPickerView.git"
+  s.homepage     = "https://github.com/caoyunxiao/YXPickerView"
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
-  s.author       = { 'caoyunxiao' => '1105938518@qq.com' }
-  s.source       = { :git => "https://github.com/caoyunxiao/YXPickerView.git", :tag => "0.0.1" }
+  s.author       = { 'Matej caoyunxiao' => 'chinacgcgcg@163.com' }
+  s.source       = { :git => "https://github.com/caoyunxiao/YXPickerView.git", :tag => "2.0.1" }
   s.ios.deployment_target = '8.0'
-  s.source_files = "YXPickerView/**/*"
-
+  s.tvos.deployment_target = '9.0'
+  s.source_files = "YXPickerView/*.{h,m}"
+  s.requires_arc = true
+  s.resources = "YXPickerView/YXBundle.bundle"
 end

@@ -129,7 +129,8 @@
 #pragma mark -解析省市区JSON数据
 - (void)getDatas
 {
-    NSData *data = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"city" ofType:@"json"]];
+    NSBundle *bundlePath = [NSBundle bundleWithPath:[[NSBundle bundleForClass:[YXPickerView class]] pathForResource:@"YXBundle" ofType:@"bundle"]];
+    NSData *data = [NSData dataWithContentsOfFile:[bundlePath pathForResource:@"city" ofType:@"json"]];
     NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
     NSArray *provinceArray = dict[@"root"][@"province"];
     for (NSDictionary *cityDict in provinceArray) {
