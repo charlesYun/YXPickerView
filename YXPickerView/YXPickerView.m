@@ -204,6 +204,9 @@
         }
     }];
     
+    [self reloadComponent:0];
+    [self reloadComponent:1];
+    [self reloadComponent:2];
     [self selectRow:self.selectedIndex_province inComponent:0 animated:NO];
     [self selectRow:self.selectedIndex_city inComponent:1 animated:NO];
     [self selectRow:self.selectedIndex_area inComponent:2 animated:NO];

@@ -32,7 +32,7 @@
 
 
 - (IBAction)clickAction:(UIButton *)sender {
-    [[YXPickerManager shareManager] showAddressPickerView:[UIColor redColor] defaultAddress:nil commitBlock:^(NSString *address, NSString *zipcode) {
+    [[YXPickerManager shareManager] showAddressPickerView:[UIColor redColor] defaultAddress:@"上海市-市辖区-闵行区" commitBlock:^(NSString *address, NSString *zipcode) {
         NSLog(@"%@------>%@",address,zipcode);
     } cancelBlock:^{
         NSLog(@"取消");
