@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2943F9081F1C5B82000B5D94 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 2943F9071F1C5B82000B5D94 /* Podfile */; };
 		299321901F1C5440001DBDE3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2993217C1F1C5440001DBDE3 /* AppDelegate.m */; };
 		299321911F1C5440001DBDE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2993217D1F1C5440001DBDE3 /* Assets.xcassets */; };
 		299321921F1C5440001DBDE3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2993217E1F1C5440001DBDE3 /* LaunchScreen.storyboard */; };
@@ -14,7 +15,6 @@
 		299321941F1C5440001DBDE3 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 299321821F1C5440001DBDE3 /* Info.plist */; };
 		299321951F1C5440001DBDE3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 299321831F1C5440001DBDE3 /* main.m */; };
 		299321961F1C5440001DBDE3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 299321851F1C5440001DBDE3 /* ViewController.m */; };
-		2993219D1F1C5641001DBDE3 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 2993219C1F1C5641001DBDE3 /* Podfile */; };
 		29C966291F1C587900B20171 /* YXBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 29C966201F1C587900B20171 /* YXBundle.bundle */; };
 		29C9662A1F1C587900B20171 /* YXCityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C966221F1C587900B20171 /* YXCityModel.m */; };
 		29C9662B1F1C587900B20171 /* YXPickerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C966241F1C587900B20171 /* YXPickerManager.m */; };
@@ -24,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2943F9071F1C5B82000B5D94 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		299321211F189972001DBDE3 /* demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2993217B1F1C5440001DBDE3 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2993217C1F1C5440001DBDE3 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -34,7 +35,6 @@
 		299321831F1C5440001DBDE3 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		299321841F1C5440001DBDE3 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		299321851F1C5440001DBDE3 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		2993219C1F1C5641001DBDE3 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		29C966201F1C587900B20171 /* YXBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = YXBundle.bundle; sourceTree = "<group>"; };
 		29C966211F1C587900B20171 /* YXCityModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXCityModel.h; sourceTree = "<group>"; };
 		29C966221F1C587900B20171 /* YXCityModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXCityModel.m; sourceTree = "<group>"; };
@@ -64,7 +64,7 @@
 		299321181F189972001DBDE3 = {
 			isa = PBXGroup;
 			children = (
-				2993219C1F1C5641001DBDE3 /* Podfile */,
+				2943F9071F1C5B82000B5D94 /* Podfile */,
 				2993217A1F1C5440001DBDE3 /* demo */,
 				299321221F189972001DBDE3 /* Products */,
 				A34C140E0BB2B0A20BC04F54 /* Pods */,
@@ -192,7 +192,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2993219D1F1C5641001DBDE3 /* Podfile in Resources */,
+				2943F9081F1C5B82000B5D94 /* Podfile in Resources */,
 				299321941F1C5440001DBDE3 /* Info.plist in Resources */,
 				29C966291F1C587900B20171 /* YXBundle.bundle in Resources */,
 				299321931F1C5440001DBDE3 /* Main.storyboard in Resources */,
