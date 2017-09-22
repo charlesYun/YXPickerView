@@ -36,7 +36,13 @@
     return _datePickerView;
 }
 
-
+- (YXGeneralPickerView *)generalPickerView
+{
+    if (!_generalPickerView) {
+        _generalPickerView = [[YXGeneralPickerView alloc] init];
+    }
+    return _generalPickerView;
+}
 
 - (void)showAddressPickerView:(UIColor *)tintColor defaultAddress:(NSString *)address commitBlock:(void (^)(NSString *, NSString *))commitBlock cancelBlock:(void (^)())cancelBlock
 {
@@ -47,6 +53,14 @@
     }];
 }
 
+- (void)showGeneralPickerView:(UIColor *)tintColor dataArray:(NSArray<NSString *> *)dataArray defaultString:(NSString *)defaultString commitBlock:(void (^)(NSString *selectedItem,NSInteger index))commitBlock cancelBlock:(void (^)())cancelBlock
+{
+    [self.generalPickerView showGeneralPickerView:tintColor dataArray:dataArray defaultString:defaultString commitBlock:^(NSString *selectedItem,NSInteger index) {
+        commitBlock(selectedItem,index);
+    } cancelBlock:^{
+        cancelBlock();
+    }];
+}
 
 - (void)showDatePickerView:(UIColor *)tintColor datePickerModel:(UIDatePickerMode)model minimumDate:(NSDate *)minimumDate maximumDate:(NSDate *)maximumDate defaultDate:(NSString *)dateString commitBlock:(void (^)(NSString *))commitBlock cancelBlock:(void (^)())cancelBlock
 {

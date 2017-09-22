@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "YXAddressPickerView.h"
 #import "YXDatePickerView.h"
+#import "YXGeneralPickerView.h"
 
 @interface YXPickerManager : NSObject
 
@@ -16,6 +17,7 @@
 
 @property (nonatomic, strong) YXAddressPickerView *addressPickerView;
 @property (nonatomic, strong) YXDatePickerView *datePickerView;
+@property (nonatomic, strong) YXGeneralPickerView *generalPickerView;
 
 
 /**
@@ -27,6 +29,17 @@
  @param cancelBlock  取消回调
  */
 - (void)showAddressPickerView:(UIColor *)tintColor defaultAddress:(NSString *)address commitBlock:(void(^)(NSString *address,NSString *zipcode))commitBlock cancelBlock:(void(^)())cancelBlock;
+
+/**
+ 显示选择框
+ 
+ @param tintColor       主题颜色
+ @param dataArray       默认选中
+ @param defaultString   默认选中
+ @param commitBlock     确认回调
+ @param cancelBlock     取消回调
+ */
+- (void)showGeneralPickerView:(UIColor *)tintColor dataArray:(NSArray<NSString *> *)dataArray defaultString:(NSString *)defaultString commitBlock:(void (^)(NSString *selectedItem,NSInteger index))commitBlock cancelBlock:(void (^)())cancelBlock;
 
 /**
  显示时间选择框

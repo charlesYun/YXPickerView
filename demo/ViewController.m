@@ -30,8 +30,8 @@
 //        NSLog(@"取消");
 //    }];
     
-    [[YXPickerManager shareManager] showDatePickerView:[UIColor redColor] datePickerModel:UIDatePickerModeDate minimumDate:[NSDate date] maximumDate:nil defaultDate:@"2017-10-01 00:00:00" commitBlock:^(NSString *date) {
-        NSLog(@"%@",date);
+    [[YXPickerManager shareManager] showGeneralPickerView:[UIColor redColor] dataArray:@[@"测试1",@"测试2",@"测试3",@"测试4",@"测试5"] defaultString:@"测试5" commitBlock:^(NSString *selectedItem,NSInteger index) {
+        NSLog(@"%@",selectedItem);
     } cancelBlock:^{
         
     }];

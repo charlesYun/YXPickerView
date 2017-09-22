@@ -155,7 +155,6 @@
             cancelBlock();
         }
     };
-    
     self.toolbar.commitBlock = ^{
         if (commitBlock) {
             [weakSelf hiddenWithAnimation];
@@ -211,8 +210,6 @@
     [self selectRow:self.selectedIndex_city inComponent:1 animated:NO];
     [self selectRow:self.selectedIndex_area inComponent:2 animated:NO];
 }
-
-
 
 
 #pragma mark -<UIPickerViewDelegate,UIPickerViewDataSource>

@@ -24,20 +24,16 @@
         UIBarButtonItem *spaceItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
         self.titleButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"请选择" style:UIBarButtonItemStyleDone target:self action:nil];
         self.titleButtonItem.enabled = NO;
-        [self.titleButtonItem setTitleTextAttributes:@{NSFontAttributeName: [UIFont systemFontOfSize:15],
+        [self.titleButtonItem setTitleTextAttributes:@{NSFontAttributeName: [UIFont systemFontOfSize:13],
                                                 NSForegroundColorAttributeName : COLOR} forState:UIControlStateNormal];
         self.cancelButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"取消" style:UIBarButtonItemStyleDone target:self action:@selector(cancelButtonClickAction)];
         self.commitButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"确认" style:UIBarButtonItemStyleDone target:self action:@selector(commitButtonClickAction)];
         self.items = @[leftFixBar,self.cancelButtonItem,spaceItem,self.titleButtonItem,spaceItem,self.commitButtonItem,rightFixBar];
         self.tintColor = [UIColor redColor];
-        UIView *topLineView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, 0.5)];
-        topLineView.backgroundColor = COLOR;
         UIView *bottomLineView = [[UIView alloc] initWithFrame:CGRectMake(0, 43.5, WIDTH, 0.5)];
         bottomLineView.backgroundColor = COLOR;
-        [self addSubview:topLineView];
         [self addSubview:bottomLineView];
         [self bringSubviewToFront:bottomLineView];
-        [self bringSubviewToFront:topLineView];
     }
     return self;
 }

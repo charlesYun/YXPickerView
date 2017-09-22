@@ -21,6 +21,7 @@
 		299321941F1C5440001DBDE3 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 299321821F1C5440001DBDE3 /* Info.plist */; };
 		299321951F1C5440001DBDE3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 299321831F1C5440001DBDE3 /* main.m */; };
 		299321961F1C5440001DBDE3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 299321851F1C5440001DBDE3 /* ViewController.m */; };
+		299366C11F74D7E9002057CB /* YXGeneralPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 299366C01F74D7E9002057CB /* YXGeneralPickerView.m */; };
 		EAAFD710E97687139321524C /* libPods-demo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D6A5E740DB7EE98A0A02B66C /* libPods-demo.a */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +48,8 @@
 		299321831F1C5440001DBDE3 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		299321841F1C5440001DBDE3 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		299321851F1C5440001DBDE3 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		299366BF1F74D7E9002057CB /* YXGeneralPickerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YXGeneralPickerView.h; sourceTree = "<group>"; };
+		299366C01F74D7E9002057CB /* YXGeneralPickerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YXGeneralPickerView.m; sourceTree = "<group>"; };
 		791613E6FBB1DAC73DA1D29E /* Pods-demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-demo/Pods-demo.debug.xcconfig"; sourceTree = "<group>"; };
 		D6A5E740DB7EE98A0A02B66C /* libPods-demo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-demo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF86096CEB7F4B2A60D896CF /* Pods-demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-demo/Pods-demo.release.xcconfig"; sourceTree = "<group>"; };
@@ -74,6 +77,8 @@
 				2943F90E1F1C6B4E000B5D94 /* YXPickerManager.m */,
 				2943F90F1F1C6B4E000B5D94 /* YXAddressPickerView.h */,
 				2943F9101F1C6B4E000B5D94 /* YXAddressPickerView.m */,
+				299366BF1F74D7E9002057CB /* YXGeneralPickerView.h */,
+				299366C01F74D7E9002057CB /* YXGeneralPickerView.m */,
 				2943F9181F1C6CF2000B5D94 /* YXDatePickerView.h */,
 				2943F9191F1C6CF2000B5D94 /* YXDatePickerView.m */,
 				2943F9111F1C6B4E000B5D94 /* YXToolbar.h */,
@@ -169,7 +174,7 @@
 				TargetAttributes = {
 					299321201F189972001DBDE3 = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = 6VMCD64Z88;
+						DevelopmentTeam = 2G3393EZPN;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -267,6 +272,7 @@
 				299321951F1C5440001DBDE3 /* main.m in Sources */,
 				299321901F1C5440001DBDE3 /* AppDelegate.m in Sources */,
 				2943F91A1F1C6CF2000B5D94 /* YXDatePickerView.m in Sources */,
+				299366C11F74D7E9002057CB /* YXGeneralPickerView.m in Sources */,
 				2943F9151F1C6B4E000B5D94 /* YXPickerManager.m in Sources */,
 				2943F9141F1C6B4E000B5D94 /* YXCityModel.m in Sources */,
 			);
@@ -391,7 +397,7 @@
 			baseConfigurationReference = 791613E6FBB1DAC73DA1D29E /* Pods-demo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 6VMCD64Z88;
+				DEVELOPMENT_TEAM = 2G3393EZPN;
 				INFOPLIST_FILE = "$(SRCROOT)/demo/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -405,7 +411,7 @@
 			baseConfigurationReference = EF86096CEB7F4B2A60D896CF /* Pods-demo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 6VMCD64Z88;
+				DEVELOPMENT_TEAM = 2G3393EZPN;
 				INFOPLIST_FILE = "$(SRCROOT)/demo/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
