@@ -24,8 +24,8 @@
         UIBarButtonItem *spaceItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
         self.titleButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"请选择" style:UIBarButtonItemStyleDone target:self action:nil];
         self.titleButtonItem.enabled = NO;
-        [self.titleButtonItem setTitleTextAttributes:@{NSFontAttributeName: [UIFont systemFontOfSize:13],
-                                                NSForegroundColorAttributeName : COLOR} forState:UIControlStateNormal];
+        [self.titleButtonItem setTitleTextAttributes:@{NSFontAttributeName: [UIFont systemFontOfSize:15],
+                                                NSForegroundColorAttributeName : [UIColor lightGrayColor]} forState:UIControlStateNormal];
         self.cancelButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"取消" style:UIBarButtonItemStyleDone target:self action:@selector(cancelButtonClickAction)];
         self.commitButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"确认" style:UIBarButtonItemStyleDone target:self action:@selector(commitButtonClickAction)];
         self.items = @[leftFixBar,self.cancelButtonItem,spaceItem,self.titleButtonItem,spaceItem,self.commitButtonItem,rightFixBar];
@@ -36,6 +36,20 @@
         [self bringSubviewToFront:bottomLineView];
     }
     return self;
+}
+
+- (void)setTitle:(NSString *)title
+{
+    if (self.titleButtonItem) {
+        self.titleButtonItem.title = title;
+    }
+}
+
+- (void)setTitleColor:(UIColor *)titleColor
+{
+    if (self.titleButtonItem) {
+        self.titleButtonItem.tintColor = titleColor;
+    }
 }
 
 - (void)setToolBarTintColor:(UIColor *)toolBarTintColor

@@ -8,6 +8,11 @@
 
 #import "YXGeneralPickerView.h"
 
+/**
+ 取消回调
+ */
+typedef void (^CancelBlock)();
+
 @interface YXGeneralPickerView()<UIPickerViewDelegate,UIPickerViewDataSource>
 
 @property (nonatomic, strong) UIView *bgView;
@@ -19,6 +24,7 @@
  */
 @property (nonatomic, assign) NSInteger selectedIndex;
 
+@property (nonatomic, copy) CancelBlock block;
 
 @end
 
@@ -78,6 +84,7 @@
 }
 
 - (void)hiddenWithAnimation {
+    self.block();
     CGFloat height = self.bgView.frame.size.height;
     [UIView animateWithDuration:0.25 animations:^{
         self.bgView.center = CGPointMake(WIDTH / 2, HEIGHT + height / 2);
@@ -104,6 +111,7 @@
 
 - (void)showGeneralPickerView:(UIColor *)tintColor dataArray:(NSArray<NSString *> *)dataArray defaultString:(NSString *)defaultString commitBlock:(void (^)(NSString *selectedItem,NSInteger index))commitBlock cancelBlock:(void (^)())cancelBlock
 {
+    self.block = cancelBlock;
     self.datasArray = dataArray;
     [self showDefaultItem:defaultString];
     [self reloadAllComponents];
@@ -113,7 +121,6 @@
     self.toolbar.cancelBlock = ^ {
         if (cancelBlock) {
             [weakSelf hiddenWithAnimation];
-            cancelBlock();
         }
     };
     
