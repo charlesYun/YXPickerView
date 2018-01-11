@@ -136,7 +136,9 @@ typedef void (^CancelBlock)();
 {
     NSInteger index = [self.datasArray indexOfObject:defaultString];
     [self reloadComponent:0];
-    [self selectRow:index inComponent:0 animated:NO];
+    if (defaultString) {
+        [self selectRow:index inComponent:0 animated:NO];
+    }
 }
 
 #pragma mark -<UIPickerViewDelegate,UIPickerViewDataSource>
