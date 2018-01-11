@@ -49,7 +49,9 @@
     [self.addressPickerView showAddressPickerView:tintColor defaultAddress:address commitBlock:^(NSString *address, NSString *zipcode) {
         commitBlock(address,zipcode);
     } cancelBlock:^{
-        cancelBlock();
+        if (cancelBlock) {
+            cancelBlock();
+        }
     }];
 }
 
@@ -58,7 +60,9 @@
     [self.generalPickerView showGeneralPickerView:tintColor dataArray:dataArray defaultString:defaultString commitBlock:^(NSString *selectedItem,NSInteger index) {
         commitBlock(selectedItem,index);
     } cancelBlock:^{
-        cancelBlock();
+        if (cancelBlock) {
+            cancelBlock();
+        }
     }];
 }
 
@@ -67,7 +71,9 @@
     [self.datePickerView showDatePickerView:tintColor datePickerModel:model minimumDate:minimumDate maximumDate:maximumDate defaultDate:dateString commitBlock:^(NSString *date) {
         commitBlock(date);
     } cancelBlock:^{
-        cancelBlock();
+        if (cancelBlock) {
+            cancelBlock();
+        }
     }];
 }
 

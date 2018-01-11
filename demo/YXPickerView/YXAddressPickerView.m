@@ -9,6 +9,11 @@
 #import "YXAddressPickerView.h"
 #import "YXCityModel.h"
 
+/**
+ 取消回调
+ */
+typedef void (^CancelBlock)();
+
 @interface YXAddressPickerView()<UIPickerViewDelegate,UIPickerViewDataSource>
 
 @property (nonatomic, strong) UIView *bgView;
@@ -30,6 +35,8 @@
  选中区
  */
 @property (nonatomic, assign) NSInteger selectedIndex_area;
+
+@property (nonatomic, copy) CancelBlock block;
 
 @end
 
@@ -101,6 +108,7 @@
 }
 
 - (void)hiddenWithAnimation {
+    self.block();
     CGFloat height = self.bgView.frame.size.height;
     [UIView animateWithDuration:0.25 animations:^{
         self.bgView.center = CGPointMake(WIDTH / 2, HEIGHT + height / 2);
@@ -145,6 +153,7 @@
 
 - (void)showAddressPickerView:(UIColor *)tintColor defaultAddress:(NSString *)address commitBlock:(void (^)(NSString *, NSString *))commitBlock cancelBlock:(void (^)())cancelBlock
 {
+    self.block = cancelBlock;
     [self showDefaultAddress:address];
     self.toolbar.tintColor = tintColor;
     [self showWithAnimation];
@@ -152,7 +161,6 @@
     self.toolbar.cancelBlock = ^ {
         if (cancelBlock) {
             [weakSelf hiddenWithAnimation];
-            cancelBlock();
         }
     };
     self.toolbar.commitBlock = ^{

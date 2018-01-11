@@ -27,6 +27,16 @@
 @property (nonatomic, strong) UIColor *toolBarTintColor;
 
 /**
+ 标题
+ */
+@property (nonatomic, copy) NSString *title;
+
+/**
+ 标题字体颜色
+ */
+@property (nonatomic, strong) UIColor *titleColor;
+
+/**
  取消
  */
 @property (nonatomic, copy) NSString *cancelTitle;

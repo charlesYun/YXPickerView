@@ -136,7 +136,7 @@ typedef void (^CancelBlock)();
 {
     NSInteger index = [self.datasArray indexOfObject:defaultString];
     [self reloadComponent:0];
-    if (defaultString) {
+    if (defaultString && index < self.datasArray.count) {
         [self selectRow:index inComponent:0 animated:NO];
     }
 }
