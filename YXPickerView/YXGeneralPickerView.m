@@ -111,6 +111,7 @@ typedef void (^CancelBlock)();
 
 - (void)showGeneralPickerView:(UIColor *)tintColor dataArray:(NSArray<NSString *> *)dataArray defaultString:(NSString *)defaultString commitBlock:(void (^)(NSString *selectedItem,NSInteger index))commitBlock cancelBlock:(void (^)())cancelBlock
 {
+    self.selectedIndex = 0;
     self.block = cancelBlock;
     self.datasArray = dataArray;
     [self showDefaultItem:defaultString];
@@ -137,6 +138,7 @@ typedef void (^CancelBlock)();
     NSInteger index = [self.datasArray indexOfObject:defaultString];
     [self reloadComponent:0];
     if (defaultString && index < self.datasArray.count) {
+        self.selectedIndex = index;
         [self selectRow:index inComponent:0 animated:NO];
     }
 }
