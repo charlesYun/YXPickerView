@@ -139,8 +139,8 @@ typedef void (^CancelBlock)();
     [self reloadComponent:0];
     if (defaultString && index < self.datasArray.count) {
         self.selectedIndex = index;
-        [self selectRow:index inComponent:0 animated:NO];
     }
+    [self selectRow:self.selectedIndex inComponent:0 animated:NO];
 }
 
 #pragma mark -<UIPickerViewDelegate,UIPickerViewDataSource>
