@@ -3,6 +3,9 @@
 ###项目中经常会用到选择器，比如省市区选择、筛选项选择、日期选择、时间选择等等，此项目做了一个封装以方便使用。
 
 通过cocoapods找到它：`pod search YXPickerView`
+使用：
+`pod 'YXPickerView'`
+`pod install`
 
 #### 1、自定义选择使用示例
 ```objective-c
