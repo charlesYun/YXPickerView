@@ -94,7 +94,7 @@
     self.maximumDate = maximumDate;
     [self showWithAnimation];
     __weak typeof(self) weakSelf = self;
-    self.toolbar.confirmBlock = ^ {
+    self.toolbar.cancelBlock = ^ {
         [weakSelf hiddenWithAnimation];
         if (cancel) {
             cancel();
