@@ -10,12 +10,14 @@
 #import "YXAddressPickerView.h"
 #import "YXDatePickerView.h"
 #import "YXCustomPickerView.h"
+#import "YXActionSheetViewController.h"
 
 @interface YXPickerManager()
 
 @property (nonatomic, strong) YXAddressPickerView *addressPickerView;
 @property (nonatomic, strong) YXDatePickerView *datePickerView;
 @property (nonatomic, strong) YXCustomPickerView *customPickerView;
+@property (nonatomic, strong) YXActionSheetViewController *actionSheetView;
 
 @end
 
@@ -92,28 +94,36 @@
     [self.datePickerView showDatePickerViewMinimumDate:minimumDate maximumDate:maximumDate defaultDate:defaultDate confirm:confirm cancel:cancel];
 }
 
+/**
+ 仿微信弹出框
+ 
+ @param array YXActionSheetModel list
+ @param title 标题
+ */
+- (void)showActionSheetView:(NSArray<YXActionSheetModel *> *)array title:(NSString *)title {
+    [self.actionSheetView showActionSheetView:array title:title];
+}
+
 #pragma mark - lazy
 - (YXAddressPickerView *)addressPickerView {
-    if (!_addressPickerView) {
-        _addressPickerView = [[YXAddressPickerView alloc] init];
-    }
+    _addressPickerView = [[YXAddressPickerView alloc] init];
     return _addressPickerView;
 }
 
 - (YXDatePickerView *)datePickerView {
-    if (!_datePickerView) {
-        _datePickerView = [[YXDatePickerView alloc] init];
-    }
+    _datePickerView = [[YXDatePickerView alloc] init];
     return _datePickerView;
 }
 
 - (YXCustomPickerView *)customPickerView {
-    if (!_customPickerView) {
-        _customPickerView = [[YXCustomPickerView alloc] init];
-    }
+    _customPickerView = [[YXCustomPickerView alloc] init];
     return _customPickerView;
 }
 
+- (YXActionSheetViewController *)actionSheetView {
+    _actionSheetView = [[YXActionSheetViewController alloc] init];
+    return _actionSheetView;
+}
 
 
 

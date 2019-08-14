@@ -5,10 +5,10 @@
 //  Created by 曹云霄 on 2017/7/14.
 //  Copyright © 2017年 曹云霄. All rights reserved.
 //
-
-#import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "YXPickerViewHeader.h"
+#import "YXActionSheetModel.h"
+
 
 @interface YXPickerManager : NSObject
 
@@ -86,5 +86,15 @@
  @param cancel       取消回调
  */
 - (void)showDatePickerViewMinimumDate:(NSDate *)minimumDate maximumDate:(NSDate *)maximumDate defaultDate:(NSString *)defaultDate confirm:(DateConfirmBlock)confirm cancel:(CancelBlock)cancel;
+
+/**
+ 仿微信弹出框
+
+ @param array YXActionSheetModel list
+ @param title 标题
+ */
+- (void)showActionSheetView:(NSArray<YXActionSheetModel *> *)array title:(NSString *)title;
+
+
 
 @end

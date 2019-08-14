@@ -15,6 +15,11 @@
 		2900BB8B22FC0DD900F3344C /* YXCityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2900BB8322FC0DD900F3344C /* YXCityModel.m */; };
 		2900BB8C22FC0DD900F3344C /* YXPickerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2900BB8522FC0DD900F3344C /* YXPickerManager.m */; };
 		2900BB9622FC14FE00F3344C /* NSDate+YXCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 2900BB9522FC14FE00F3344C /* NSDate+YXCategory.m */; };
+		292B8E8823014A3D008EB264 /* YXActionSheetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 292B8E8723014A3D008EB264 /* YXActionSheetViewController.m */; };
+		292B8E8B23014AC1008EB264 /* YXActionSheetTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 292B8E8A23014AC1008EB264 /* YXActionSheetTableViewCell.m */; };
+		292B8E8E23014AE4008EB264 /* YXActionSheetModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 292B8E8D23014AE4008EB264 /* YXActionSheetModel.m */; };
+		292B8E9123014C72008EB264 /* UIButton+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 292B8E9023014C72008EB264 /* UIButton+Category.m */; };
+		292B8E9423014FCA008EB264 /* NSString+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 292B8E9323014FCA008EB264 /* NSString+Category.m */; };
 		2943F9081F1C5B82000B5D94 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 2943F9071F1C5B82000B5D94 /* Podfile */; };
 		299321901F1C5440001DBDE3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2993217C1F1C5440001DBDE3 /* AppDelegate.m */; };
 		299321911F1C5440001DBDE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2993217D1F1C5440001DBDE3 /* Assets.xcassets */; };
@@ -43,6 +48,16 @@
 		2900BB8F22FC0E7F00F3344C /* YXPickerViewHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YXPickerViewHeader.h; sourceTree = "<group>"; };
 		2900BB9422FC14FE00F3344C /* NSDate+YXCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+YXCategory.h"; sourceTree = "<group>"; };
 		2900BB9522FC14FE00F3344C /* NSDate+YXCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+YXCategory.m"; sourceTree = "<group>"; };
+		292B8E8623014A3D008EB264 /* YXActionSheetViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YXActionSheetViewController.h; sourceTree = "<group>"; };
+		292B8E8723014A3D008EB264 /* YXActionSheetViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YXActionSheetViewController.m; sourceTree = "<group>"; };
+		292B8E8923014AC1008EB264 /* YXActionSheetTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YXActionSheetTableViewCell.h; sourceTree = "<group>"; };
+		292B8E8A23014AC1008EB264 /* YXActionSheetTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YXActionSheetTableViewCell.m; sourceTree = "<group>"; };
+		292B8E8C23014AE4008EB264 /* YXActionSheetModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YXActionSheetModel.h; sourceTree = "<group>"; };
+		292B8E8D23014AE4008EB264 /* YXActionSheetModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YXActionSheetModel.m; sourceTree = "<group>"; };
+		292B8E8F23014C72008EB264 /* UIButton+Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+Category.h"; sourceTree = "<group>"; };
+		292B8E9023014C72008EB264 /* UIButton+Category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Category.m"; sourceTree = "<group>"; };
+		292B8E9223014FCA008EB264 /* NSString+Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Category.h"; sourceTree = "<group>"; };
+		292B8E9323014FCA008EB264 /* NSString+Category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+Category.m"; sourceTree = "<group>"; };
 		2943F9071F1C5B82000B5D94 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		299321211F189972001DBDE3 /* demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2993217B1F1C5440001DBDE3 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -84,6 +99,10 @@
 				2900BB7B22FC0DD900F3344C /* YXDatePickerView.m */,
 				2900BB7C22FC0DD900F3344C /* YXCustomPickerView.h */,
 				2900BB8122FC0DD900F3344C /* YXCustomPickerView.m */,
+				292B8E8623014A3D008EB264 /* YXActionSheetViewController.h */,
+				292B8E8723014A3D008EB264 /* YXActionSheetViewController.m */,
+				292B8E8923014AC1008EB264 /* YXActionSheetTableViewCell.h */,
+				292B8E8A23014AC1008EB264 /* YXActionSheetTableViewCell.m */,
 				2900BB9022FC14A300F3344C /* Category */,
 				2900BB8E22FC0E1F00F3344C /* ToolBar */,
 				2900BB8D22FC0E1400F3344C /* Model */,
@@ -96,6 +115,8 @@
 			children = (
 				2900BB7F22FC0DD900F3344C /* YXCityModel.h */,
 				2900BB8322FC0DD900F3344C /* YXCityModel.m */,
+				292B8E8C23014AE4008EB264 /* YXActionSheetModel.h */,
+				292B8E8D23014AE4008EB264 /* YXActionSheetModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -114,6 +135,10 @@
 			children = (
 				2900BB9422FC14FE00F3344C /* NSDate+YXCategory.h */,
 				2900BB9522FC14FE00F3344C /* NSDate+YXCategory.m */,
+				292B8E8F23014C72008EB264 /* UIButton+Category.h */,
+				292B8E9023014C72008EB264 /* UIButton+Category.m */,
+				292B8E9223014FCA008EB264 /* NSString+Category.h */,
+				292B8E9323014FCA008EB264 /* NSString+Category.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -270,13 +295,18 @@
 			files = (
 				2900BB8C22FC0DD900F3344C /* YXPickerManager.m in Sources */,
 				2900BB9622FC14FE00F3344C /* NSDate+YXCategory.m in Sources */,
+				292B8E8B23014AC1008EB264 /* YXActionSheetTableViewCell.m in Sources */,
 				2900BB8A22FC0DD900F3344C /* YXCustomPickerView.m in Sources */,
 				2900BB8822FC0DD900F3344C /* YXDatePickerView.m in Sources */,
 				2900BB8622FC0DD900F3344C /* YXAddressPickerView.m in Sources */,
 				2900BB8B22FC0DD900F3344C /* YXCityModel.m in Sources */,
 				299321961F1C5440001DBDE3 /* ViewController.m in Sources */,
+				292B8E8823014A3D008EB264 /* YXActionSheetViewController.m in Sources */,
 				299321951F1C5440001DBDE3 /* main.m in Sources */,
+				292B8E8E23014AE4008EB264 /* YXActionSheetModel.m in Sources */,
+				292B8E9123014C72008EB264 /* UIButton+Category.m in Sources */,
 				2900BB8922FC0DD900F3344C /* YXToolbar.m in Sources */,
+				292B8E9423014FCA008EB264 /* NSString+Category.m in Sources */,
 				299321901F1C5440001DBDE3 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
