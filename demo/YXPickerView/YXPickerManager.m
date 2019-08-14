@@ -95,6 +95,28 @@
 }
 
 /**
+ 显示时间选择框（UIDatePickerModeCountDownTimer）
+ 
+ @param minimumDate  最小时间
+ @param maximumDate  最大时间
+ @param defaultDate  默认时间
+ @param confirm      确认回调
+ @param cancel       取消回调
+ */
+- (void)showTimerPickerViewMinimumDate:(NSDate *)minimumDate maximumDate:(NSDate *)maximumDate defaultDate:(NSString *)defaultDate confirm:(DateConfirmBlock)confirm cancel:(CancelBlock)cancel {
+    [self.datePickerView showTimerPickerViewMinimumDate:minimumDate maximumDate:maximumDate defaultDate:defaultDate confirm:confirm cancel:cancel];
+}
+
+/**
+ 仿微信弹出框
+ 
+ @param array YXActionSheetModel list
+ */
+- (void)showActionSheetView:(NSArray<YXActionSheetModel *> *)array {
+    [self showActionSheetView:array title:nil];
+}
+
+/**
  仿微信弹出框
  
  @param array YXActionSheetModel list

@@ -163,6 +163,19 @@
     [self showPickerViewDatePickerModel:UIDatePickerModeDate minimumDate:minimumDate maximumDate:maximumDate defaultDate:defaultDate confirm:confirm cancel:cancel];
 }
 
+/**
+ 显示时间选择框（UIDatePickerModeCountDownTimer）
+ 
+ @param minimumDate  最小时间
+ @param maximumDate  最大时间
+ @param defaultDate  默认时间
+ @param confirm      确认回调
+ @param cancel       取消回调
+ */
+- (void)showTimerPickerViewMinimumDate:(NSDate *)minimumDate maximumDate:(NSDate *)maximumDate defaultDate:(NSString *)defaultDate confirm:(DateConfirmBlock)confirm cancel:(CancelBlock)cancel {
+    [self showPickerViewDatePickerModel:UIDatePickerModeCountDownTimer minimumDate:minimumDate maximumDate:maximumDate defaultDate:defaultDate confirm:confirm cancel:cancel];
+}
+
 #pragma mark - lazy
 - (UIView *)bgView {
     if (!_bgView) {

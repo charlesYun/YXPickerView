@@ -45,7 +45,7 @@
         }
             break;
         case 2: {
-            [[YXPickerManager shareManager] showDatePickerViewMinimumDate:nil maximumDate:nil defaultDate:@"2019-05-08" confirm:^(NSString *dateStr, NSDate *date) {
+            [[YXPickerManager shareManager] showDatePickerViewMinimumDate:nil maximumDate:nil defaultDate:@"2019-05" confirm:^(NSString *dateStr, NSDate *date) {
                 NSLog(@"%@ - %@",dateStr,date);
             } cancel:^{
                 NSLog(@"取消");
@@ -53,7 +53,7 @@
         }
             break;
         case 3: {
-            [[YXPickerManager shareManager] showTimePickerViewMinimumDate:nil maximumDate:nil defaultDate:@"15:00:00" confirm:^(NSString *dateStr, NSDate *date) {
+            [[YXPickerManager shareManager] showTimePickerViewMinimumDate:nil maximumDate:nil defaultDate:@"15:00" confirm:^(NSString *dateStr, NSDate *date) {
                 NSLog(@"%@ - %@",dateStr,date);
             } cancel:^{
                 NSLog(@"取消");
