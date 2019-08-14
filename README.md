@@ -66,7 +66,7 @@ YXActionSheetModel *viewModel = [YXActionSheetModel title:@"查看大图" color:
 [viewModel setClickBlock:^(NSInteger index) {
     NSLog(@"点击");
  }];
- [[YXPickerManager shareManager] showActionSheetView:@[photoModel,cameraModel,viewModel] title:@"设置个人头像"];
+[[YXPickerManager shareManager] showActionSheetView:@[photoModel,cameraModel,viewModel] title:@"设置个人头像"];
 ```
 
 ### End
