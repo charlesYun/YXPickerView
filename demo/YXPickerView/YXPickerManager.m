@@ -29,7 +29,9 @@
 - (void)showAddressPickerViewSelected:(NSString *)address confirm:(void(^)(NSString *address,NSString *zipcode))confirm cancel:(CancelBlock)cancel {
     [self.addressPickerView showAddressPickerViewSelected:address confirm:confirm cancel:^{
         self->_addressPickerView = nil;
-        cancel();
+        if (cancel) {
+            cancel();
+        }
     }];
 }
 
@@ -44,7 +46,9 @@
 - (void)showCustomPickerViewDataArray:(NSArray<NSString *> *)dataArray selectIndex:(NSInteger)selectIndex confirm:(void (^)(NSString *title,NSInteger index))confirm cancel:(CancelBlock)cancel {
     [self.customPickerView showCustomPickerViewDataArray:dataArray selectIndex:selectIndex confirm:confirm cancel:^{
         self->_customPickerView = nil;
-        cancel();
+        if (cancel) {
+            cancel();
+        }
     }];
 }
 
@@ -60,7 +64,9 @@
 - (void)showDateAndTimePickerViewMinimumDate:(NSDate *)minimumDate maximumDate:(NSDate *)maximumDate defaultDate:(NSString *)defaultDate confirm:(DateConfirmBlock)confirm cancel:(CancelBlock)cancel {
     [self.datePickerView showDateAndTimePickerViewMinimumDate:minimumDate maximumDate:maximumDate defaultDate:defaultDate confirm:confirm cancel:^{
         self->_datePickerView = nil;
-        cancel();
+        if (cancel) {
+            cancel();
+        }
     }];
 }
 
@@ -76,7 +82,9 @@
 - (void)showTimePickerViewMinimumDate:(NSDate *)minimumDate maximumDate:(NSDate *)maximumDate defaultDate:(NSString *)defaultDate confirm:(DateConfirmBlock)confirm cancel:(CancelBlock)cancel {
     [self.datePickerView showTimePickerViewMinimumDate:minimumDate maximumDate:maximumDate defaultDate:defaultDate confirm:confirm cancel:^{
         self->_datePickerView = nil;
-        cancel();
+        if (cancel) {
+            cancel();
+        }
     }];
 }
 
@@ -92,7 +100,9 @@
 - (void)showDatePickerViewMinimumDate:(NSDate *)minimumDate maximumDate:(NSDate *)maximumDate defaultDate:(NSString *)defaultDate confirm:(DateConfirmBlock)confirm cancel:(CancelBlock)cancel {
     [self.datePickerView showDatePickerViewMinimumDate:minimumDate maximumDate:maximumDate defaultDate:defaultDate confirm:confirm cancel:^{
         self->_datePickerView = nil;
-        cancel();
+        if (cancel) {
+            cancel();
+        }
     }];
 }
 
@@ -108,7 +118,9 @@
 - (void)showTimerPickerViewMinimumDate:(NSDate *)minimumDate maximumDate:(NSDate *)maximumDate defaultDate:(NSString *)defaultDate confirm:(DateConfirmBlock)confirm cancel:(CancelBlock)cancel {
     [self.datePickerView showTimerPickerViewMinimumDate:minimumDate maximumDate:maximumDate defaultDate:defaultDate confirm:confirm cancel:^{
         self->_datePickerView = nil;
-        cancel();
+        if (cancel) {
+            cancel();
+        }
     }];
 }
 
