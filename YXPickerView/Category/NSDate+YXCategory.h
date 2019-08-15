@@ -9,9 +9,16 @@
 
 @interface NSDate (YXCategory)
 
+
+/***********内部对部分异常字符串做了处理***********/
+
 + (NSDate *)dateFormatyyyyMMddHHmmss:(NSString *)dateStr;
 + (NSDate *)dateFormatyyyyMMdd:(NSString *)dateStr;
 + (NSDate *)dateFormatHHmmss:(NSString *)dateStr;
+
+/***********内部对部分异常字符串做了处理***********/
+
+
 
 + (NSString *)strFormatyyyyMMddHHmmss:(NSDate *)date;
 + (NSString *)strFormatyyyyMMdd:(NSDate *)date;

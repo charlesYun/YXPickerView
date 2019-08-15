@@ -32,6 +32,23 @@
 }
 
 + (NSDate *)dateFormatyyyyMMddHHmmss:(NSString *)dateStr {
+    NSString *regex = @"^[0-9]{4}\\-[0-9]{2}\\-[0-9]{2}\\s[0-9]{2}\\:[0-9]{2}\\:[0-9]{2}";
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",regex];
+    BOOL result = [predicate evaluateWithObject:dateStr];
+    if (!result) {
+        NSRange range = [dateStr rangeOfString:regex options:NSRegularExpressionSearch];
+        if (range.location != NSNotFound) {
+            dateStr = [dateStr substringWithRange:range];
+        }else{
+            NSString *regex1 = @"^[0-9]{4}\\-[0-9]{2}\\-[0-9]{2}\\s[0-9]{2}\\:[0-9]{2}";
+            NSRange range = [dateStr rangeOfString:regex1 options:NSRegularExpressionSearch];
+            if (range.location != NSNotFound) {
+                dateStr = [NSString stringWithFormat:@"%@:00",[dateStr substringWithRange:range]];
+            }else {
+                return [NSDate date];
+            }
+        }
+    }
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
     NSDate *date = [dateFormatter dateFromString:dateStr];
@@ -39,6 +56,23 @@
 }
 
 + (NSDate *)dateFormatyyyyMMdd:(NSString *)dateStr {
+    NSString *regex = @"^[0-9]{4}\\-[0-9]{2}\\-[0-9]{2}";
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",regex];
+    BOOL result = [predicate evaluateWithObject:dateStr];
+    if (!result) {
+        NSRange range = [dateStr rangeOfString:regex options:NSRegularExpressionSearch];
+        if (range.location != NSNotFound) {
+            dateStr = [dateStr substringWithRange:range];
+        }else{
+            NSString *regex1 = @"^[0-9]{4}\\-[0-9]{2}";
+            NSRange range = [dateStr rangeOfString:regex1 options:NSRegularExpressionSearch];
+            if (range.location != NSNotFound) {
+                dateStr = [NSString stringWithFormat:@"%@-01",[dateStr substringWithRange:range]];
+            }else {
+                return [NSDate date];
+            }
+        }
+    }
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy-MM-dd"];
     NSDate *date = [dateFormatter dateFromString:dateStr];
@@ -46,6 +80,23 @@
 }
 
 + (NSDate *)dateFormatHHmmss:(NSString *)dateStr {
+    NSString *regex = @"^[0-9]{2}\\:[0-9]{2}\\:[0-9]{2}";
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",regex];
+    BOOL result = [predicate evaluateWithObject:dateStr];
+    if (!result) {
+        NSRange range = [dateStr rangeOfString:regex options:NSRegularExpressionSearch];
+        if (range.location != NSNotFound) {
+            dateStr = [dateStr substringWithRange:range];
+        }else{
+            NSString *regex1 = @"^[0-9]{2}\\:[0-9]{2}";
+            NSRange range = [dateStr rangeOfString:regex1 options:NSRegularExpressionSearch];
+            if (range.location != NSNotFound) {
+                dateStr = [NSString stringWithFormat:@"%@:00",[dateStr substringWithRange:range]];
+            }else {
+                return [NSDate date];
+            }
+        }
+    }
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"HH:mm:ss"];
     NSDate *date = [dateFormatter dateFromString:dateStr];

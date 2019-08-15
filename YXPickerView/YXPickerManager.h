@@ -27,11 +27,7 @@
 @property (nonatomic, strong) UIColor *lineColor;
 @property (nonatomic, assign) BOOL lineHide;
 
-/**
- 默认中文
- */
 @property (nonatomic, strong) NSLocale *locale;
-/***************************自定义***************************/
 
 + (YXPickerManager *)shareManager;
 
@@ -86,6 +82,24 @@
  @param cancel       取消回调
  */
 - (void)showDatePickerViewMinimumDate:(NSDate *)minimumDate maximumDate:(NSDate *)maximumDate defaultDate:(NSString *)defaultDate confirm:(DateConfirmBlock)confirm cancel:(CancelBlock)cancel;
+
+/**
+ 显示时间选择框（UIDatePickerModeCountDownTimer）
+ 
+ @param minimumDate  最小时间
+ @param maximumDate  最大时间
+ @param defaultDate  默认时间
+ @param confirm      确认回调
+ @param cancel       取消回调
+ */
+- (void)showTimerPickerViewMinimumDate:(NSDate *)minimumDate maximumDate:(NSDate *)maximumDate defaultDate:(NSString *)defaultDate confirm:(DateConfirmBlock)confirm cancel:(CancelBlock)cancel;
+
+/**
+ 仿微信弹出框
+ 
+ @param array YXActionSheetModel list
+ */
+- (void)showActionSheetView:(NSArray<YXActionSheetModel *> *)array;
 
 /**
  仿微信弹出框

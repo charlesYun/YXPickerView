@@ -79,7 +79,9 @@
 - (void)showCustomPickerViewDataArray:(NSArray<NSString *> *)dataArray selectIndex:(NSInteger)selectIndex confirm:(void (^)(NSString *title,NSInteger index))confirm cancel:(CancelBlock)cancel {
     self.datasArray = dataArray;
     [self reloadAllComponents];
-    [self selectRow:selectIndex inComponent:0 animated:NO];
+    if (selectIndex >= 0 && selectIndex < dataArray.count) {
+        [self selectRow:selectIndex inComponent:0 animated:NO];
+    }
     [self showWithAnimation];
     __weak typeof(self) weakSelf = self;
     self.toolbar.cancelBlock = ^ {
