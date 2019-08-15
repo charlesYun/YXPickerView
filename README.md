@@ -52,4 +52,21 @@ NSLog(@"取消");
 }];
 ```
 
+#### 5、仿微信弹框
+```objective-c
+YXActionSheetModel *photoModel = [YXActionSheetModel title:@"相册" color:[UIColor blackColor]];
+[photoModel setClickBlock:^(NSInteger index) {
+    NSLog(@"点击");
+ }];
+YXActionSheetModel *cameraModel = [YXActionSheetModel title:@"相机" color:[UIColor blackColor]];
+[cameraModel setClickBlock:^(NSInteger index) {
+    NSLog(@"点击");
+}];
+YXActionSheetModel *viewModel = [YXActionSheetModel title:@"查看大图" color:[UIColor blackColor]];
+[viewModel setClickBlock:^(NSInteger index) {
+    NSLog(@"点击");
+ }];
+[[YXPickerManager shareManager] showActionSheetView:@[photoModel,cameraModel,viewModel] title:@"设置个人头像"];
+```
+
 ### End
