@@ -7,19 +7,6 @@
 //
 
 #import "YXPickerManager.h"
-#import "YXAddressPickerView.h"
-#import "YXDatePickerView.h"
-#import "YXCustomPickerView.h"
-#import "YXActionSheetViewController.h"
-
-@interface YXPickerManager()
-
-@property (nonatomic, strong) YXAddressPickerView *addressPickerView;
-@property (nonatomic, strong) YXDatePickerView *datePickerView;
-@property (nonatomic, strong) YXCustomPickerView *customPickerView;
-@property (nonatomic, strong) YXActionSheetViewController *actionSheetView;
-
-@end
 
 @implementation YXPickerManager
 
@@ -40,7 +27,10 @@
  @param cancel       取消回调
  */
 - (void)showAddressPickerViewSelected:(NSString *)address confirm:(void(^)(NSString *address,NSString *zipcode))confirm cancel:(CancelBlock)cancel {
-    [self.addressPickerView showAddressPickerViewSelected:address confirm:confirm cancel:cancel];
+    [self.addressPickerView showAddressPickerViewSelected:address confirm:confirm cancel:^{
+        self->_addressPickerView = nil;
+        cancel();
+    }];
 }
 
 /**
@@ -52,7 +42,10 @@
  @param cancel          取消回调
  */
 - (void)showCustomPickerViewDataArray:(NSArray<NSString *> *)dataArray selectIndex:(NSInteger)selectIndex confirm:(void (^)(NSString *title,NSInteger index))confirm cancel:(CancelBlock)cancel {
-    [self.customPickerView showCustomPickerViewDataArray:dataArray selectIndex:selectIndex confirm:confirm cancel:cancel];
+    [self.customPickerView showCustomPickerViewDataArray:dataArray selectIndex:selectIndex confirm:confirm cancel:^{
+        self->_customPickerView = nil;
+        cancel();
+    }];
 }
 
 /**
@@ -65,7 +58,10 @@
  @param cancel       取消回调
  */
 - (void)showDateAndTimePickerViewMinimumDate:(NSDate *)minimumDate maximumDate:(NSDate *)maximumDate defaultDate:(NSString *)defaultDate confirm:(DateConfirmBlock)confirm cancel:(CancelBlock)cancel {
-    [self.datePickerView showDateAndTimePickerViewMinimumDate:minimumDate maximumDate:maximumDate defaultDate:defaultDate confirm:confirm cancel:cancel];
+    [self.datePickerView showDateAndTimePickerViewMinimumDate:minimumDate maximumDate:maximumDate defaultDate:defaultDate confirm:confirm cancel:^{
+        self->_datePickerView = nil;
+        cancel();
+    }];
 }
 
 /**
@@ -78,7 +74,10 @@
  @param cancel       取消回调
  */
 - (void)showTimePickerViewMinimumDate:(NSDate *)minimumDate maximumDate:(NSDate *)maximumDate defaultDate:(NSString *)defaultDate confirm:(DateConfirmBlock)confirm cancel:(CancelBlock)cancel {
-    [self.datePickerView showTimePickerViewMinimumDate:minimumDate maximumDate:maximumDate defaultDate:defaultDate confirm:confirm cancel:cancel];
+    [self.datePickerView showTimePickerViewMinimumDate:minimumDate maximumDate:maximumDate defaultDate:defaultDate confirm:confirm cancel:^{
+        self->_datePickerView = nil;
+        cancel();
+    }];
 }
 
 /**
@@ -91,7 +90,10 @@
  @param cancel       取消回调
  */
 - (void)showDatePickerViewMinimumDate:(NSDate *)minimumDate maximumDate:(NSDate *)maximumDate defaultDate:(NSString *)defaultDate confirm:(DateConfirmBlock)confirm cancel:(CancelBlock)cancel {
-    [self.datePickerView showDatePickerViewMinimumDate:minimumDate maximumDate:maximumDate defaultDate:defaultDate confirm:confirm cancel:cancel];
+    [self.datePickerView showDatePickerViewMinimumDate:minimumDate maximumDate:maximumDate defaultDate:defaultDate confirm:confirm cancel:^{
+        self->_datePickerView = nil;
+        cancel();
+    }];
 }
 
 /**
@@ -104,7 +106,10 @@
  @param cancel       取消回调
  */
 - (void)showTimerPickerViewMinimumDate:(NSDate *)minimumDate maximumDate:(NSDate *)maximumDate defaultDate:(NSString *)defaultDate confirm:(DateConfirmBlock)confirm cancel:(CancelBlock)cancel {
-    [self.datePickerView showTimerPickerViewMinimumDate:minimumDate maximumDate:maximumDate defaultDate:defaultDate confirm:confirm cancel:cancel];
+    [self.datePickerView showTimerPickerViewMinimumDate:minimumDate maximumDate:maximumDate defaultDate:defaultDate confirm:confirm cancel:^{
+        self->_datePickerView = nil;
+        cancel();
+    }];
 }
 
 /**
@@ -128,22 +133,30 @@
 
 #pragma mark - lazy
 - (YXAddressPickerView *)addressPickerView {
-    _addressPickerView = [[YXAddressPickerView alloc] init];
+    if (!_addressPickerView) {
+        _addressPickerView = [[YXAddressPickerView alloc] init];
+    }
     return _addressPickerView;
 }
 
 - (YXDatePickerView *)datePickerView {
-    _datePickerView = [[YXDatePickerView alloc] init];
+    if (!_datePickerView) {
+        _datePickerView = [[YXDatePickerView alloc] init];
+    }
     return _datePickerView;
 }
 
 - (YXCustomPickerView *)customPickerView {
-    _customPickerView = [[YXCustomPickerView alloc] init];
+    if (!_customPickerView) {
+        _customPickerView = [[YXCustomPickerView alloc] init];
+    }
     return _customPickerView;
 }
 
 - (YXActionSheetViewController *)actionSheetView {
-    _actionSheetView = [[YXActionSheetViewController alloc] init];
+    if (!_actionSheetView) {
+        _actionSheetView = [[YXActionSheetViewController alloc] init];
+    }
     return _actionSheetView;
 }
 

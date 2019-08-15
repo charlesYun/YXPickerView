@@ -14,6 +14,7 @@
 @property (nonatomic, strong) YXToolbar *toolbar;
 @property (nonatomic, strong) UIView *bgView;
 @property (nonatomic, strong) UIView *containerView;
+@property (nonatomic, copy) CancelBlock cancelBlock;
 
 @end
 
@@ -48,6 +49,9 @@
         self.containerView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.0];
     } completion:^(BOOL finished) {
         [self hiddenViews];
+        if (self.cancelBlock) {
+            self.cancelBlock();
+        }
     }];
 }
 
@@ -92,6 +96,7 @@
     self.datePickerMode = model;
     self.minimumDate = minimumDate;
     self.maximumDate = maximumDate;
+    self.cancelBlock = cancel;
     [self showWithAnimation];
     __weak typeof(self) weakSelf = self;
     self.toolbar.cancelBlock = ^ {

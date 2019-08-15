@@ -16,6 +16,7 @@
 @property (nonatomic, strong) UIView *containerView;
 @property (nonatomic, strong) NSArray *datasArray;
 @property (nonatomic, assign) NSInteger selectedIndex;
+@property (nonatomic, copy) CancelBlock cancelBlock;
 
 @end
 
@@ -50,6 +51,9 @@
         self.containerView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.0];
     } completion:^(BOOL finished) {
         [self hiddenViews];
+        if (self.cancelBlock) {
+            self.cancelBlock();
+        }
     }];
 }
 
@@ -78,6 +82,7 @@
  */
 - (void)showCustomPickerViewDataArray:(NSArray<NSString *> *)dataArray selectIndex:(NSInteger)selectIndex confirm:(void (^)(NSString *title,NSInteger index))confirm cancel:(CancelBlock)cancel {
     self.datasArray = dataArray;
+    self.cancelBlock = cancel;
     [self reloadAllComponents];
     if (selectIndex >= 0 && selectIndex < dataArray.count) {
         [self selectRow:selectIndex inComponent:0 animated:NO];

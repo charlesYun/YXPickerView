@@ -8,27 +8,48 @@
 #import <UIKit/UIKit.h>
 #import "YXPickerViewHeader.h"
 #import "YXActionSheetModel.h"
-
+#import "YXAddressPickerView.h"
+#import "YXDatePickerView.h"
+#import "YXCustomPickerView.h"
+#import "YXActionSheetViewController.h"
 
 @interface YXPickerManager : NSObject
 
-/***************************自定义***************************/
+@property (nonatomic, strong) YXAddressPickerView *addressPickerView;
+@property (nonatomic, strong) YXDatePickerView *datePickerView;
+@property (nonatomic, strong) YXCustomPickerView *customPickerView;
+@property (nonatomic, strong) YXActionSheetViewController *actionSheetView;
 
+
+/***************************可自定义属性***************************/
+
+//取消按钮文字颜色
 @property (nonatomic, strong) UIColor *cancelColor;
+//取消按钮文字
 @property (nonatomic, copy) NSString *cancelStr;
-
+//ToolBars标题
 @property (nonatomic, copy) NSString *title;
+//ToolBars标题颜色
 @property (nonatomic, strong) UIColor *titleColor;
+//ToolBar标题是否隐藏
 @property (nonatomic, assign) BOOL titleHide;
-
-@property (nonatomic, strong) UIColor *confirmColor;
-@property (nonatomic, copy) NSString *confirmStr;
-
+//ToolBar下方线条颜色
 @property (nonatomic, strong) UIColor *lineColor;
+//ToolBar下方线条隐藏
 @property (nonatomic, assign) BOOL lineHide;
-
+//确认按钮文字颜色
+@property (nonatomic, strong) UIColor *confirmColor;
+//确认按钮文字
+@property (nonatomic, copy) NSString *confirmStr;
+//语言
 @property (nonatomic, strong) NSLocale *locale;
 
+
+/**
+ 单例模式
+
+ @return YXPickerManager
+ */
 + (YXPickerManager *)shareManager;
 
 /**

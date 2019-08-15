@@ -15,6 +15,7 @@
 @property (nonatomic, strong) YXToolbar *toolbar;
 @property (nonatomic, strong) UIView *bgView;
 @property (nonatomic, strong) UIView *containerView;
+@property (nonatomic, copy) CancelBlock cancelBlock;
 
 /**
  数据源
@@ -71,6 +72,9 @@
         self.containerView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.0];
     } completion:^(BOOL finished) {
         [self hiddenViews];
+        if (self.cancelBlock) {
+            self.cancelBlock();
+        }
     }];
 }
 
@@ -111,6 +115,7 @@
  @param cancel       取消回调
  */
 - (void)showAddressPickerViewSelected:(NSString *)address confirm:(void(^)(NSString *address,NSString *zipcode))confirm cancel:(CancelBlock)cancel {
+    self.cancelBlock = cancel;
     [self showDefaultAddress:address];
     [self showWithAnimation];
     __weak typeof(self) weakSelf = self;
