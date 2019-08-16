@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface YXActionSheetViewController : UIViewController
 
 
-- (void)showActionSheetView:(NSArray<YXActionSheetModel *> *)array title:(NSString *)title;
+- (void)showActionSheetView:(NSArray<YXActionSheetModel *> *)array title:(NSString *)title cancel:(CancelBlock)cancel;
 
 @end
 

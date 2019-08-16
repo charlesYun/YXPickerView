@@ -18,6 +18,7 @@
 @property (nonatomic, strong) NSMutableArray <NSArray<YXActionSheetModel *> *>*datasArray;
 @property (nonatomic, strong) UIView *bgView;
 @property (nonatomic, assign) CGFloat headerHeight;
+@property (nonatomic, copy) CancelBlock cancelBlock;
 
 @end
 
@@ -78,24 +79,17 @@
         self.view.frame = frame;
     } completion:^(BOOL finished) {
         [self hiddenViews];
+        if (self.cancelBlock) {
+            self.cancelBlock();
+        }
     }];
 }
 
-- (void)showActionSheetView:(NSArray<YXActionSheetModel *> *)array {
+- (void)showActionSheetView:(NSArray<YXActionSheetModel *> *)array title:(NSString *)title cancel:(CancelBlock)cancel {
     [self.datasArray addObject:array];
     YXActionSheetModel *cancelModel = [YXActionSheetModel title:@"取消" color:[UIColor blackColor]];
     [self.datasArray addObject:@[cancelModel]];
-    self.headerHeight = 0;
-    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 0.01)];
-    self.actionTableView.tableHeaderView = headerView;
-    [self.actionTableView reloadData];
-    [self showWithAnimation];
-}
-
-- (void)showActionSheetView:(NSArray<YXActionSheetModel *> *)array title:(NSString *)title {
-    [self.datasArray addObject:array];
-    YXActionSheetModel *cancelModel = [YXActionSheetModel title:@"取消" color:[UIColor blackColor]];
-    [self.datasArray addObject:@[cancelModel]];
+    self.cancelBlock = cancel;
     UIView *headerView = nil;
     if (title) {
         CGSize size = [title heightWithWidth:kScreenWidth - 100 andFont:[UIFont systemFontOfSize:16]];
@@ -105,7 +99,7 @@
         label.font = [UIFont systemFontOfSize:16];
         label.text = title;
         label.textColor = [UIColor grayColor];
-        headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, size.height + 40)];
+        headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, size.height + 30)];
         headerView.backgroundColor = [UIColor whiteColor];
         [headerView addSubview:label];
         label.center = headerView.center;

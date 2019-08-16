@@ -140,7 +140,9 @@
  @param title 标题
  */
 - (void)showActionSheetView:(NSArray<YXActionSheetModel *> *)array title:(NSString *)title {
-    [self.actionSheetView showActionSheetView:array title:title];
+    [self.actionSheetView showActionSheetView:array title:title cancel:^{
+        self->_actionSheetView = nil;
+    }];
 }
 
 #pragma mark - lazy
