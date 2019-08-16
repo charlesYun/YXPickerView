@@ -72,6 +72,8 @@ YXActionSheetModel *viewModel = [YXActionSheetModel title:@"查看大图" color:
  }];
 [[YXPickerManager shareManager] showActionSheetView:@[photoModel,cameraModel,viewModel] title:@"设置个人头像"];
 ```
-<img src="https://github.com/caoyunxiao/YXPickerView/blob/master/images/Simulator%20Screen%20Shot%20-%20iPhone%20XS%20-%202019-08-16%20at%2012.01.20.png"  height="667" width="375"><img src="https://github.com/caoyunxiao/YXPickerView/blob/master/images/Simulator%20Screen%20Shot%20-%20iPhone%20XS%20-%202019-08-16%20at%2012.01.22.png"  height="667" width="375">
+<img src="https://github.com/caoyunxiao/YXPickerView/blob/master/images/Simulator%20Screen%20Shot%20-%20iPhone%20XS%20-%202019-08-16%20at%2012.01.20.png"  height="667" width="375">
+
+<img src="https://github.com/caoyunxiao/YXPickerView/blob/master/images/Simulator%20Screen%20Shot%20-%20iPhone%20XS%20-%202019-08-16%20at%2012.01.22.png"  height="667" width="375">
 
 ### End
