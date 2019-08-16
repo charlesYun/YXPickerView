@@ -15,7 +15,7 @@ NSLog(@"%@ - %ld",title,index);
 NSLog(@"取消");
 }];
 ```
-<img src="https://github.com/caoyunxiao/YXPickerView/blob/master/images/Simulator%20Screen%20Shot%20-%20iPhone%20XS%20-%202019-08-16%20at%2012.01.09.png"  height="667" width="375">
+<img src="https://github.com/caoyunxiao/YXPickerView/blob/master/images/Simulator%20Screen%20Shot%20-%20iPhone%20XS%20-%202019-08-16%20at%2012.01.16.png"  height="667" width="375">
 
 #### 2、省市区选择使用示例
 ```objective-c
@@ -25,6 +25,7 @@ NSLog(@"%@ - %@",address,zipcode);
 NSLog(@"取消");
 }];
 ```
+<img src="https://github.com/caoyunxiao/YXPickerView/blob/master/images/Simulator%20Screen%20Shot%20-%20iPhone%20XS%20-%202019-08-16%20at%2012.01.12.png"  height="667" width="375">
 
 #### 3、日期选择使用示例
 ```objective-c
@@ -34,6 +35,7 @@ NSLog(@"%@ - %@",dateStr,date);
 NSLog(@"取消");
 }];
 ```
+<img src="https://github.com/caoyunxiao/YXPickerView/blob/master/images/Simulator%20Screen%20Shot%20-%20iPhone%20XS%20-%202019-08-16%20at%2012.01.09.png"  height="667" width="375">
 
 #### 4、时间选择使用示例
 ```objective-c
@@ -43,6 +45,7 @@ NSLog(@"%@ - %@",dateStr,date);
 NSLog(@"取消");
 }];
 ```
+<img src="https://github.com/caoyunxiao/YXPickerView/blob/master/images/Simulator%20Screen%20Shot%20-%20iPhone%20XS%20-%202019-08-16%20at%2012.01.09.png"  height="667" width="375">
 
 #### 5、日期和时间选择使用示例
 ```objective-c
@@ -52,6 +55,7 @@ NSLog(@"%@ - %@",dateStr,date);
 NSLog(@"取消");
 }];
 ```
+<img src="https://github.com/caoyunxiao/YXPickerView/blob/master/images/Simulator%20Screen%20Shot%20-%20iPhone%20XS%20-%202019-08-16%20at%2012.01.18.png"  height="667" width="375">
 
 #### 5、仿微信弹框
 ```objective-c
@@ -69,5 +73,6 @@ YXActionSheetModel *viewModel = [YXActionSheetModel title:@"查看大图" color:
  }];
 [[YXPickerManager shareManager] showActionSheetView:@[photoModel,cameraModel,viewModel] title:@"设置个人头像"];
 ```
-
+<img src="https://github.com/caoyunxiao/YXPickerView/blob/master/images/Simulator%20Screen%20Shot%20-%20iPhone%20XS%20-%202019-08-16%20at%2012.01.20.png"  height="667" width="375">
+<img src="https://github.com/caoyunxiao/YXPickerView/blob/master/images/Simulator%20Screen%20Shot%20-%20iPhone%20XS%20-%202019-08-16%20at%2012.01.22.png"  height="667" width="375">
 ### End
