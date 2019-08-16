@@ -15,7 +15,7 @@ NSLog(@"%@ - %ld",title,index);
 NSLog(@"取消");
 }];
 ```
-<img src="https://github.com/caoyunxiao/YXPickerView/blob/master/images/Simulator%20Screen%20Shot%20-%20iPhone%20XS%20-%202019-08-16%20at%2012.01.09.png"  height="330" width="495">
+<img src="https://github.com/caoyunxiao/YXPickerView/blob/master/images/Simulator%20Screen%20Shot%20-%20iPhone%20XS%20-%202019-08-16%20at%2012.01.09.png"  height="375" width="667">
 
 #### 2、省市区选择使用示例
 ```objective-c
