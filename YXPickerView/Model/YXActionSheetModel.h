@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)title:(NSString *)title color:(UIColor *)color;
 + (instancetype)title:(NSString *)title color:(UIColor *)color icon:(NSString *)icon;
++ (instancetype)view:(UIView *)view;
 
 /**
  文字
@@ -35,6 +36,11 @@ NS_ASSUME_NONNULL_BEGIN
  是否选中
  */
 @property (nonatomic, assign) BOOL isSelected;
+
+/**
+ content view
+*/
+@property (nonatomic, strong) UIView *contentView;
 
 /**
  点击回调

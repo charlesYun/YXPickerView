@@ -12,6 +12,7 @@
 #import "YXDatePickerView.h"
 #import "YXCustomPickerView.h"
 #import "YXActionSheetViewController.h"
+#import "YXCustomController.h"
 
 @interface YXPickerManager : NSObject
 
@@ -19,7 +20,7 @@
 @property (nonatomic, strong) YXDatePickerView *datePickerView;
 @property (nonatomic, strong) YXCustomPickerView *customPickerView;
 @property (nonatomic, strong) YXActionSheetViewController *actionSheetView;
-
+@property (nonatomic, strong) YXCustomController *customView;
 
 /***************************可自定义属性***************************/
 
@@ -130,6 +131,26 @@
  */
 - (void)showActionSheetView:(NSArray<YXActionSheetModel *> *)array title:(NSString *)title;
 
+/**
+ 自定义弹出框（UIView）
+
+ @param view UIView
+ @param cancel cancel
+ */
+- (void)showCustomView:(UIView *)view cancel:(CancelBlock)cancel;
+
+/**
+ 自定义弹出框（UIViewController）
+
+ @param controller UIViewController
+ @param height UIViewController 高度
+ @param cancel cancel
+ */
+- (void)showCustomVc:(UIViewController *)controller contentHeight:(CGFloat)height cancel:(CancelBlock)cancel;
+
+
+/// 隐藏弹出框
+- (void)hiddenWithAnimation;
 
 
 @end

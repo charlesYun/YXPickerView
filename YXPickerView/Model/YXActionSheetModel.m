@@ -29,4 +29,15 @@
     return self;
 }
 
++ (instancetype)view:(UIView *)view {
+    return [[self alloc] initWithView:view];
+}
+
+- (instancetype)initWithView:(UIView *)view {
+    if (self = [super init]) {
+        self.contentView = view;
+    }
+    return self;
+}
+
 @end
