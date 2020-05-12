@@ -10,8 +10,7 @@
 
 @implementation YXPickerManager
 
-+ (YXPickerManager *)shareManager
-{
++ (YXPickerManager *)shareManager {
     static YXPickerManager *manager = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -20,65 +19,160 @@
     return manager;
 }
 
-- (YXAddressPickerView *)addressPickerView
-{
+/**
+ 显示省市区选择框
+ 
+ @param address      默认地址
+ @param confirm      确认回调
+ @param cancel       取消回调
+ */
+- (void)showAddressPickerViewSelected:(NSString *)address confirm:(void(^)(NSString *address,NSString *zipcode))confirm cancel:(CancelBlock)cancel {
+    [self.addressPickerView showAddressPickerViewSelected:address confirm:confirm cancel:^{
+        self->_addressPickerView = nil;
+        if (cancel) {
+            cancel();
+        }
+    }];
+}
+
+/**
+ 显示选择框（自定义数据）
+ 
+ @param dataArray       默认选中
+ @param selectIndex     默认选中下标
+ @param confirm         确认回调
+ @param cancel          取消回调
+ */
+- (void)showCustomPickerViewDataArray:(NSArray<NSString *> *)dataArray selectIndex:(NSInteger)selectIndex confirm:(void (^)(NSString *title,NSInteger index))confirm cancel:(CancelBlock)cancel {
+    [self.customPickerView showCustomPickerViewDataArray:dataArray selectIndex:selectIndex confirm:confirm cancel:^{
+        self->_customPickerView = nil;
+        if (cancel) {
+            cancel();
+        }
+    }];
+}
+
+/**
+ 显示时间选择框（UIDatePickerModeDateAndTime）
+ 
+ @param minimumDate  最小时间
+ @param maximumDate  最大时间
+ @param defaultDate  默认时间
+ @param confirm      确认回调
+ @param cancel       取消回调
+ */
+- (void)showDateAndTimePickerViewMinimumDate:(NSDate *)minimumDate maximumDate:(NSDate *)maximumDate defaultDate:(NSString *)defaultDate confirm:(DateConfirmBlock)confirm cancel:(CancelBlock)cancel {
+    [self.datePickerView showDateAndTimePickerViewMinimumDate:minimumDate maximumDate:maximumDate defaultDate:defaultDate confirm:confirm cancel:^{
+        self->_datePickerView = nil;
+        if (cancel) {
+            cancel();
+        }
+    }];
+}
+
+/**
+ 显示时间选择框（UIDatePickerModeTime）
+ 
+ @param minimumDate  最小时间
+ @param maximumDate  最大时间
+ @param defaultDate  默认时间
+ @param confirm      确认回调
+ @param cancel       取消回调
+ */
+- (void)showTimePickerViewMinimumDate:(NSDate *)minimumDate maximumDate:(NSDate *)maximumDate defaultDate:(NSString *)defaultDate confirm:(DateConfirmBlock)confirm cancel:(CancelBlock)cancel {
+    [self.datePickerView showTimePickerViewMinimumDate:minimumDate maximumDate:maximumDate defaultDate:defaultDate confirm:confirm cancel:^{
+        self->_datePickerView = nil;
+        if (cancel) {
+            cancel();
+        }
+    }];
+}
+
+/**
+ 显示时间选择框（UIDatePickerModeDate）
+ 
+ @param minimumDate  最小时间
+ @param maximumDate  最大时间
+ @param defaultDate  默认时间
+ @param confirm      确认回调
+ @param cancel       取消回调
+ */
+- (void)showDatePickerViewMinimumDate:(NSDate *)minimumDate maximumDate:(NSDate *)maximumDate defaultDate:(NSString *)defaultDate confirm:(DateConfirmBlock)confirm cancel:(CancelBlock)cancel {
+    [self.datePickerView showDatePickerViewMinimumDate:minimumDate maximumDate:maximumDate defaultDate:defaultDate confirm:confirm cancel:^{
+        self->_datePickerView = nil;
+        if (cancel) {
+            cancel();
+        }
+    }];
+}
+
+/**
+ 显示时间选择框（UIDatePickerModeCountDownTimer）
+ 
+ @param minimumDate  最小时间
+ @param maximumDate  最大时间
+ @param defaultDate  默认时间
+ @param confirm      确认回调
+ @param cancel       取消回调
+ */
+- (void)showTimerPickerViewMinimumDate:(NSDate *)minimumDate maximumDate:(NSDate *)maximumDate defaultDate:(NSString *)defaultDate confirm:(DateConfirmBlock)confirm cancel:(CancelBlock)cancel {
+    [self.datePickerView showTimerPickerViewMinimumDate:minimumDate maximumDate:maximumDate defaultDate:defaultDate confirm:confirm cancel:^{
+        self->_datePickerView = nil;
+        if (cancel) {
+            cancel();
+        }
+    }];
+}
+
+/**
+ 仿微信弹出框
+ 
+ @param array YXActionSheetModel list
+ */
+- (void)showActionSheetView:(NSArray<YXActionSheetModel *> *)array {
+    [self showActionSheetView:array title:nil];
+}
+
+/**
+ 仿微信弹出框
+ 
+ @param array YXActionSheetModel list
+ @param title 标题
+ */
+- (void)showActionSheetView:(NSArray<YXActionSheetModel *> *)array title:(NSString *)title {
+    [self.actionSheetView showActionSheetView:array title:title cancel:^{
+        self->_actionSheetView = nil;
+    }];
+}
+
+#pragma mark - lazy
+- (YXAddressPickerView *)addressPickerView {
     if (!_addressPickerView) {
         _addressPickerView = [[YXAddressPickerView alloc] init];
     }
     return _addressPickerView;
 }
 
-- (YXDatePickerView *)datePickerView
-{
+- (YXDatePickerView *)datePickerView {
     if (!_datePickerView) {
         _datePickerView = [[YXDatePickerView alloc] init];
     }
     return _datePickerView;
 }
 
-- (YXGeneralPickerView *)generalPickerView
-{
-    if (!_generalPickerView) {
-        _generalPickerView = [[YXGeneralPickerView alloc] init];
+- (YXCustomPickerView *)customPickerView {
+    if (!_customPickerView) {
+        _customPickerView = [[YXCustomPickerView alloc] init];
     }
-    return _generalPickerView;
+    return _customPickerView;
 }
 
-- (void)showAddressPickerView:(UIColor *)tintColor defaultAddress:(NSString *)address commitBlock:(void (^)(NSString *, NSString *))commitBlock cancelBlock:(void (^)())cancelBlock
-{
-    [self.addressPickerView showAddressPickerView:tintColor defaultAddress:address commitBlock:^(NSString *address, NSString *zipcode) {
-        commitBlock(address,zipcode);
-    } cancelBlock:^{
-        if (cancelBlock) {
-            cancelBlock();
-        }
-    }];
+- (YXActionSheetViewController *)actionSheetView {
+    if (!_actionSheetView) {
+        _actionSheetView = [[YXActionSheetViewController alloc] init];
+    }
+    return _actionSheetView;
 }
-
-- (void)showGeneralPickerView:(UIColor *)tintColor dataArray:(NSArray<NSString *> *)dataArray defaultString:(NSString *)defaultString commitBlock:(void (^)(NSString *selectedItem,NSInteger index))commitBlock cancelBlock:(void (^)())cancelBlock
-{
-    [self.generalPickerView showGeneralPickerView:tintColor dataArray:dataArray defaultString:defaultString commitBlock:^(NSString *selectedItem,NSInteger index) {
-        commitBlock(selectedItem,index);
-    } cancelBlock:^{
-        if (cancelBlock) {
-            cancelBlock();
-        }
-    }];
-}
-
-- (void)showDatePickerView:(UIColor *)tintColor datePickerModel:(UIDatePickerMode)model minimumDate:(NSDate *)minimumDate maximumDate:(NSDate *)maximumDate defaultDate:(NSString *)dateString commitBlock:(void (^)(NSString *))commitBlock cancelBlock:(void (^)())cancelBlock
-{
-    [self.datePickerView showDatePickerView:tintColor datePickerModel:model minimumDate:minimumDate maximumDate:maximumDate defaultDate:dateString commitBlock:^(NSString *date) {
-        commitBlock(date);
-    } cancelBlock:^{
-        if (cancelBlock) {
-            cancelBlock();
-        }
-    }];
-}
-
-
-
 
 
 

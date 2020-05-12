@@ -8,18 +8,19 @@
 
 #import "YXAddressPickerView.h"
 #import "YXCityModel.h"
-
-/**
- 取消回调
- */
-typedef void (^CancelBlock)();
+#import "YXToolbar.h"
 
 @interface YXAddressPickerView()<UIPickerViewDelegate,UIPickerViewDataSource>
 
+@property (nonatomic, strong) YXToolbar *toolbar;
 @property (nonatomic, strong) UIView *bgView;
 @property (nonatomic, strong) UIView *containerView;
-@property (nonatomic, strong) NSMutableArray *datasArray;
+@property (nonatomic, copy) CancelBlock cancelBlock;
 
+/**
+ 数据源
+ */
+@property (nonatomic, strong) NSMutableArray *datasArray;
 
 /**
  选中省
@@ -36,85 +37,44 @@ typedef void (^CancelBlock)();
  */
 @property (nonatomic, assign) NSInteger selectedIndex_area;
 
-@property (nonatomic, copy) CancelBlock block;
-
 @end
 
 
 @implementation YXAddressPickerView
 
-#pragma mark -lazy
 
-- (NSMutableArray *)datasArray
-{
-    if (!_datasArray) {
-        _datasArray = [NSMutableArray array];
-    }
-    return _datasArray;
-}
-
-- (instancetype)initWithFrame:(CGRect)frame
-{
-    [self initToolBar];
-    [self initContainerView];
-    
-    CGRect initialFrame;
-    if (CGRectIsEmpty(frame)) {
-        initialFrame = CGRectMake(0, self.toolbar.frame.size.height, WIDTH, 216);
-    } else {
-        initialFrame = frame;
-    }
-    self = [super initWithFrame:initialFrame];
-    if (self) {
+- (instancetype)initWithFrame:(CGRect)frame {
+    if (self = [super initWithFrame:kYXPickerRect]) {
         self.backgroundColor = [UIColor whiteColor];
+        self.autoresizingMask = UIViewAutoresizingFlexibleWidth;
         self.delegate = self;
         self.dataSource = self;
-        self.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-        [self initBgView];
-        [self getDatas];
+        [self analysisJSON];
     }
     return self;
-}
-
-- (void)initBgView
-{
-    self.bgView = [[UIView alloc] initWithFrame:CGRectMake(0, HEIGHT - self.frame.size.height - 44, WIDTH, self.frame.size.height + self.toolbar.frame.size.height)];
-}
-
-- (void)initToolBar
-{
-    self.toolbar = [[YXToolbar alloc] initWithFrame:CGRectMake(0, 0, WIDTH, 44)];
-    self.toolbar.translucent = NO;
-}
-
-- (void)initContainerView
-{
-    self.containerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT)];
-    self.containerView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.4];
-    self.containerView.userInteractionEnabled = YES;
-    [self.containerView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hiddenWithAnimation)]];
 }
 
 - (void)showWithAnimation {
     [self addViews];
     self.containerView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.0];
     CGFloat height = self.bgView.frame.size.height;
-    self.bgView.center = CGPointMake(WIDTH / 2, HEIGHT + height / 2);
+    self.bgView.center = CGPointMake(kScreenWidth / 2, kScreenHeight + height / 2);
     [UIView animateWithDuration:0.25 animations:^{
-        self.bgView.center = CGPointMake(WIDTH / 2, HEIGHT - height / 2);
+        self.bgView.center = CGPointMake(kScreenWidth / 2, kScreenHeight - height / 2);
         self.containerView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.4];
     }];
-    
 }
 
 - (void)hiddenWithAnimation {
-    self.block();
     CGFloat height = self.bgView.frame.size.height;
     [UIView animateWithDuration:0.25 animations:^{
-        self.bgView.center = CGPointMake(WIDTH / 2, HEIGHT + height / 2);
+        self.bgView.center = CGPointMake(kScreenWidth / 2, kScreenHeight + height / 2);
         self.containerView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.0];
     } completion:^(BOOL finished) {
         [self hiddenViews];
+        if (self.cancelBlock) {
+            self.cancelBlock();
+        }
     }];
 }
 
@@ -133,10 +93,8 @@ typedef void (^CancelBlock)();
     [self.containerView removeFromSuperview];
 }
 
-
 #pragma mark -解析省市区JSON数据
-- (void)getDatas
-{
+- (void)analysisJSON {
     NSBundle *bundlePath = [NSBundle bundleWithPath:[[NSBundle bundleForClass:[YXAddressPickerView class]] pathForResource:@"YXBundle" ofType:@"bundle"]];
     NSData *data = [NSData dataWithContentsOfFile:[bundlePath pathForResource:@"city" ofType:@"json"]];
     NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
@@ -149,23 +107,27 @@ typedef void (^CancelBlock)();
     [self reloadAllComponents];
 }
 
-#pragma mark - 开始选择
-
-- (void)showAddressPickerView:(UIColor *)tintColor defaultAddress:(NSString *)address commitBlock:(void (^)(NSString *, NSString *))commitBlock cancelBlock:(void (^)())cancelBlock
-{
-    self.block = cancelBlock;
+/**
+ 显示省市区选择框
+ 
+ @param address      默认地址
+ @param confirm      确认回调
+ @param cancel       取消回调
+ */
+- (void)showAddressPickerViewSelected:(NSString *)address confirm:(void(^)(NSString *address,NSString *zipcode))confirm cancel:(CancelBlock)cancel {
+    self.cancelBlock = cancel;
     [self showDefaultAddress:address];
-    self.toolbar.tintColor = tintColor;
     [self showWithAnimation];
     __weak typeof(self) weakSelf = self;
     self.toolbar.cancelBlock = ^ {
-        if (cancelBlock) {
-            [weakSelf hiddenWithAnimation];
+        [weakSelf hiddenWithAnimation];
+        if (cancel) {
+            cancel();
         }
     };
-    self.toolbar.commitBlock = ^{
-        if (commitBlock) {
-            [weakSelf hiddenWithAnimation];
+    self.toolbar.confirmBlock = ^{
+        [weakSelf hiddenWithAnimation];
+        if (confirm) {
             YXCityModel *model = weakSelf.datasArray[weakSelf.selectedIndex_province];
             NSDictionary *dict = model.city[weakSelf.selectedIndex_city];
             id object = dict[@"district"];
@@ -173,18 +135,17 @@ typedef void (^CancelBlock)();
             if ([object isKindOfClass:[NSDictionary class]]) {
                 dict1 = object;
             }else {
-                dict1 = dict[@"district"][self.selectedIndex_area];
+                dict1 = dict[@"district"][weakSelf.selectedIndex_area];
             }
             NSString *address = [NSString stringWithFormat:@"%@-%@-%@",model.name,dict[@"name"],dict1[@"name"]];
             NSString *zipcode = [NSString stringWithFormat:@"%@-%@-%@",model.zipcode,dict[@"zipcode"],dict1[@"zipcode"]];
-            commitBlock(address, zipcode);
+            confirm(address, zipcode);
         }
     };
 }
 
 #pragma mark -显示默认地址
-- (void)showDefaultAddress:(NSString *)address
-{
+- (void)showDefaultAddress:(NSString *)address {
     if (!address) {
         return;
     }
@@ -219,15 +180,12 @@ typedef void (^CancelBlock)();
     [self selectRow:self.selectedIndex_area inComponent:2 animated:NO];
 }
 
-
 #pragma mark -<UIPickerViewDelegate,UIPickerViewDataSource>
-- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
-{
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
     return 3;
 }
 
-- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
-{
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
     switch (component) {
         case 0:
         {
@@ -262,8 +220,7 @@ typedef void (^CancelBlock)();
 }
 
 
-- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component;
-{
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
     switch (component) {
         case 0:
         {
@@ -320,12 +277,38 @@ typedef void (^CancelBlock)();
     }
 }
 
+#pragma mark -lazy
+- (NSMutableArray *)datasArray {
+    if (!_datasArray) {
+        _datasArray = [NSMutableArray array];
+    }
+    return _datasArray;
+}
 
+- (UIView *)bgView {
+    if (!_bgView) {
+        _bgView = [[UIView alloc] initWithFrame:CGRectMake(0, kScreenHeight - self.frame.size.height - kToolbarRect.size.height, kScreenWidth, self.frame.size.height + kToolbarRect.size.height)];
+    }
+    return _bgView;
+}
 
+- (YXToolbar *)toolbar {
+    if (!_toolbar) {
+        _toolbar = [[YXToolbar alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kToolbarRect.size.height)];
+        _toolbar.translucent = NO;
+    }
+    return _toolbar;
+}
 
-
-
-
+- (UIView *)containerView {
+    if (!_containerView) {
+        _containerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight)];
+        _containerView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.4];
+        _containerView.userInteractionEnabled = YES;
+        [_containerView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hiddenWithAnimation)]];
+    }
+    return _containerView;
+}
 
 
 

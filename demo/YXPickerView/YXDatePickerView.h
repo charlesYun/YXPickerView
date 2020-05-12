@@ -7,23 +7,53 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "YXToolbar.h"
+#import "YXPickerViewHeader.h"
 
 @interface YXDatePickerView : UIDatePicker
 
-@property (nonatomic, strong) YXToolbar *toolbar;
-
 /**
- 显示时间选择框
-
- @param tintColor    主题颜色
- @param model        NSDate类型
+ 显示时间选择框（UIDatePickerModeDateAndTime）
+ 
  @param minimumDate  最小时间
  @param maximumDate  最大时间
- @param dateString   默认时间字符串
- @param commitBlock  确认回调
- @param cancelBlock  取消回调
+ @param defaultDate  默认时间
+ @param confirm      确认回调
+ @param cancel       取消回调
  */
-- (void)showDatePickerView:(UIColor *)tintColor datePickerModel:(UIDatePickerMode)model minimumDate:(NSDate *)minimumDate maximumDate:(NSDate *)maximumDate defaultDate:(NSString *)dateString commitBlock:(void(^)(NSString *date))commitBlock cancelBlock:(void(^)())cancelBlock;
+- (void)showDateAndTimePickerViewMinimumDate:(NSDate *)minimumDate maximumDate:(NSDate *)maximumDate defaultDate:(NSString *)defaultDate confirm:(DateConfirmBlock)confirm cancel:(CancelBlock)cancel;
+
+/**
+ 显示时间选择框（UIDatePickerModeTime）
+ 
+ @param minimumDate  最小时间
+ @param maximumDate  最大时间
+ @param defaultDate  默认时间
+ @param confirm      确认回调
+ @param cancel       取消回调
+ */
+- (void)showTimePickerViewMinimumDate:(NSDate *)minimumDate maximumDate:(NSDate *)maximumDate defaultDate:(NSString *)defaultDate confirm:(DateConfirmBlock)confirm cancel:(CancelBlock)cancel;
+
+/**
+ 显示时间选择框（UIDatePickerModeDate）
+ 
+ @param minimumDate  最小时间
+ @param maximumDate  最大时间
+ @param defaultDate  默认时间
+ @param confirm      确认回调
+ @param cancel       取消回调
+ */
+- (void)showDatePickerViewMinimumDate:(NSDate *)minimumDate maximumDate:(NSDate *)maximumDate defaultDate:(NSString *)defaultDate confirm:(DateConfirmBlock)confirm cancel:(CancelBlock)cancel;
+
+/**
+ 显示时间选择框（UIDatePickerModeCountDownTimer）
+ 
+ @param minimumDate  最小时间
+ @param maximumDate  最大时间
+ @param defaultDate  默认时间
+ @param confirm      确认回调
+ @param cancel       取消回调
+ */
+- (void)showTimerPickerViewMinimumDate:(NSDate *)minimumDate maximumDate:(NSDate *)maximumDate defaultDate:(NSString *)defaultDate confirm:(DateConfirmBlock)confirm cancel:(CancelBlock)cancel;
+
 
 @end

@@ -7,13 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2900BB8622FC0DD900F3344C /* YXAddressPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2900BB7922FC0DD900F3344C /* YXAddressPickerView.m */; };
+		2900BB8722FC0DD900F3344C /* YXBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2900BB7A22FC0DD900F3344C /* YXBundle.bundle */; };
+		2900BB8822FC0DD900F3344C /* YXDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2900BB7B22FC0DD900F3344C /* YXDatePickerView.m */; };
+		2900BB8922FC0DD900F3344C /* YXToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 2900BB7E22FC0DD900F3344C /* YXToolbar.m */; };
+		2900BB8A22FC0DD900F3344C /* YXCustomPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2900BB8122FC0DD900F3344C /* YXCustomPickerView.m */; };
+		2900BB8B22FC0DD900F3344C /* YXCityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2900BB8322FC0DD900F3344C /* YXCityModel.m */; };
+		2900BB8C22FC0DD900F3344C /* YXPickerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2900BB8522FC0DD900F3344C /* YXPickerManager.m */; };
+		2900BB9622FC14FE00F3344C /* NSDate+YXCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 2900BB9522FC14FE00F3344C /* NSDate+YXCategory.m */; };
+		292B8E8823014A3D008EB264 /* YXActionSheetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 292B8E8723014A3D008EB264 /* YXActionSheetViewController.m */; };
+		292B8E8B23014AC1008EB264 /* YXActionSheetTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 292B8E8A23014AC1008EB264 /* YXActionSheetTableViewCell.m */; };
+		292B8E8E23014AE4008EB264 /* YXActionSheetModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 292B8E8D23014AE4008EB264 /* YXActionSheetModel.m */; };
+		292B8E9123014C72008EB264 /* UIButton+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 292B8E9023014C72008EB264 /* UIButton+Category.m */; };
+		292B8E9423014FCA008EB264 /* NSString+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 292B8E9323014FCA008EB264 /* NSString+Category.m */; };
 		2943F9081F1C5B82000B5D94 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 2943F9071F1C5B82000B5D94 /* Podfile */; };
-		2943F9131F1C6B4E000B5D94 /* YXBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2943F90A1F1C6B4E000B5D94 /* YXBundle.bundle */; };
-		2943F9141F1C6B4E000B5D94 /* YXCityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2943F90C1F1C6B4E000B5D94 /* YXCityModel.m */; };
-		2943F9151F1C6B4E000B5D94 /* YXPickerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2943F90E1F1C6B4E000B5D94 /* YXPickerManager.m */; };
-		2943F9161F1C6B4E000B5D94 /* YXAddressPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2943F9101F1C6B4E000B5D94 /* YXAddressPickerView.m */; };
-		2943F9171F1C6B4E000B5D94 /* YXToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 2943F9121F1C6B4E000B5D94 /* YXToolbar.m */; };
-		2943F91A1F1C6CF2000B5D94 /* YXDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2943F9191F1C6CF2000B5D94 /* YXDatePickerView.m */; };
 		299321901F1C5440001DBDE3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2993217C1F1C5440001DBDE3 /* AppDelegate.m */; };
 		299321911F1C5440001DBDE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2993217D1F1C5440001DBDE3 /* Assets.xcassets */; };
 		299321921F1C5440001DBDE3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2993217E1F1C5440001DBDE3 /* LaunchScreen.storyboard */; };
@@ -21,23 +28,37 @@
 		299321941F1C5440001DBDE3 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 299321821F1C5440001DBDE3 /* Info.plist */; };
 		299321951F1C5440001DBDE3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 299321831F1C5440001DBDE3 /* main.m */; };
 		299321961F1C5440001DBDE3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 299321851F1C5440001DBDE3 /* ViewController.m */; };
-		299366C11F74D7E9002057CB /* YXGeneralPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 299366C01F74D7E9002057CB /* YXGeneralPickerView.m */; };
 		EAAFD710E97687139321524C /* libPods-demo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D6A5E740DB7EE98A0A02B66C /* libPods-demo.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2943F9071F1C5B82000B5D94 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
-		2943F90A1F1C6B4E000B5D94 /* YXBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = YXBundle.bundle; sourceTree = "<group>"; };
-		2943F90B1F1C6B4E000B5D94 /* YXCityModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXCityModel.h; sourceTree = "<group>"; };
-		2943F90C1F1C6B4E000B5D94 /* YXCityModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXCityModel.m; sourceTree = "<group>"; };
-		2943F90D1F1C6B4E000B5D94 /* YXPickerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXPickerManager.h; sourceTree = "<group>"; };
-		2943F90E1F1C6B4E000B5D94 /* YXPickerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXPickerManager.m; sourceTree = "<group>"; };
-		2943F90F1F1C6B4E000B5D94 /* YXAddressPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXAddressPickerView.h; sourceTree = "<group>"; };
-		2943F9101F1C6B4E000B5D94 /* YXAddressPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXAddressPickerView.m; sourceTree = "<group>"; };
-		2943F9111F1C6B4E000B5D94 /* YXToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXToolbar.h; sourceTree = "<group>"; };
-		2943F9121F1C6B4E000B5D94 /* YXToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXToolbar.m; sourceTree = "<group>"; };
-		2943F9181F1C6CF2000B5D94 /* YXDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXDatePickerView.h; sourceTree = "<group>"; };
-		2943F9191F1C6CF2000B5D94 /* YXDatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXDatePickerView.m; sourceTree = "<group>"; };
+		2900BB7922FC0DD900F3344C /* YXAddressPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXAddressPickerView.m; sourceTree = "<group>"; };
+		2900BB7A22FC0DD900F3344C /* YXBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = YXBundle.bundle; sourceTree = "<group>"; };
+		2900BB7B22FC0DD900F3344C /* YXDatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXDatePickerView.m; sourceTree = "<group>"; };
+		2900BB7C22FC0DD900F3344C /* YXCustomPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXCustomPickerView.h; sourceTree = "<group>"; };
+		2900BB7D22FC0DD900F3344C /* YXPickerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXPickerManager.h; sourceTree = "<group>"; };
+		2900BB7E22FC0DD900F3344C /* YXToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXToolbar.m; sourceTree = "<group>"; };
+		2900BB7F22FC0DD900F3344C /* YXCityModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXCityModel.h; sourceTree = "<group>"; };
+		2900BB8022FC0DD900F3344C /* YXAddressPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXAddressPickerView.h; sourceTree = "<group>"; };
+		2900BB8122FC0DD900F3344C /* YXCustomPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXCustomPickerView.m; sourceTree = "<group>"; };
+		2900BB8222FC0DD900F3344C /* YXDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXDatePickerView.h; sourceTree = "<group>"; };
+		2900BB8322FC0DD900F3344C /* YXCityModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXCityModel.m; sourceTree = "<group>"; };
+		2900BB8422FC0DD900F3344C /* YXToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXToolbar.h; sourceTree = "<group>"; };
+		2900BB8522FC0DD900F3344C /* YXPickerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXPickerManager.m; sourceTree = "<group>"; };
+		2900BB8F22FC0E7F00F3344C /* YXPickerViewHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YXPickerViewHeader.h; sourceTree = "<group>"; };
+		2900BB9422FC14FE00F3344C /* NSDate+YXCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+YXCategory.h"; sourceTree = "<group>"; };
+		2900BB9522FC14FE00F3344C /* NSDate+YXCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+YXCategory.m"; sourceTree = "<group>"; };
+		292B8E8623014A3D008EB264 /* YXActionSheetViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YXActionSheetViewController.h; sourceTree = "<group>"; };
+		292B8E8723014A3D008EB264 /* YXActionSheetViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YXActionSheetViewController.m; sourceTree = "<group>"; };
+		292B8E8923014AC1008EB264 /* YXActionSheetTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YXActionSheetTableViewCell.h; sourceTree = "<group>"; };
+		292B8E8A23014AC1008EB264 /* YXActionSheetTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YXActionSheetTableViewCell.m; sourceTree = "<group>"; };
+		292B8E8C23014AE4008EB264 /* YXActionSheetModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YXActionSheetModel.h; sourceTree = "<group>"; };
+		292B8E8D23014AE4008EB264 /* YXActionSheetModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YXActionSheetModel.m; sourceTree = "<group>"; };
+		292B8E8F23014C72008EB264 /* UIButton+Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+Category.h"; sourceTree = "<group>"; };
+		292B8E9023014C72008EB264 /* UIButton+Category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Category.m"; sourceTree = "<group>"; };
+		292B8E9223014FCA008EB264 /* NSString+Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Category.h"; sourceTree = "<group>"; };
+		292B8E9323014FCA008EB264 /* NSString+Category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+Category.m"; sourceTree = "<group>"; };
+		2943F9071F1C5B82000B5D94 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		299321211F189972001DBDE3 /* demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2993217B1F1C5440001DBDE3 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2993217C1F1C5440001DBDE3 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -48,8 +69,6 @@
 		299321831F1C5440001DBDE3 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		299321841F1C5440001DBDE3 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		299321851F1C5440001DBDE3 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		299366BF1F74D7E9002057CB /* YXGeneralPickerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YXGeneralPickerView.h; sourceTree = "<group>"; };
-		299366C01F74D7E9002057CB /* YXGeneralPickerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YXGeneralPickerView.m; sourceTree = "<group>"; };
 		791613E6FBB1DAC73DA1D29E /* Pods-demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-demo/Pods-demo.debug.xcconfig"; sourceTree = "<group>"; };
 		D6A5E740DB7EE98A0A02B66C /* libPods-demo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-demo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF86096CEB7F4B2A60D896CF /* Pods-demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-demo/Pods-demo.release.xcconfig"; sourceTree = "<group>"; };
@@ -67,24 +86,61 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2943F9091F1C6B4E000B5D94 /* YXPickerView */ = {
+		2900BB7822FC0DD900F3344C /* YXPickerView */ = {
 			isa = PBXGroup;
 			children = (
-				2943F90A1F1C6B4E000B5D94 /* YXBundle.bundle */,
-				2943F90B1F1C6B4E000B5D94 /* YXCityModel.h */,
-				2943F90C1F1C6B4E000B5D94 /* YXCityModel.m */,
-				2943F90D1F1C6B4E000B5D94 /* YXPickerManager.h */,
-				2943F90E1F1C6B4E000B5D94 /* YXPickerManager.m */,
-				2943F90F1F1C6B4E000B5D94 /* YXAddressPickerView.h */,
-				2943F9101F1C6B4E000B5D94 /* YXAddressPickerView.m */,
-				299366BF1F74D7E9002057CB /* YXGeneralPickerView.h */,
-				299366C01F74D7E9002057CB /* YXGeneralPickerView.m */,
-				2943F9181F1C6CF2000B5D94 /* YXDatePickerView.h */,
-				2943F9191F1C6CF2000B5D94 /* YXDatePickerView.m */,
-				2943F9111F1C6B4E000B5D94 /* YXToolbar.h */,
-				2943F9121F1C6B4E000B5D94 /* YXToolbar.m */,
+				2900BB7A22FC0DD900F3344C /* YXBundle.bundle */,
+				2900BB8F22FC0E7F00F3344C /* YXPickerViewHeader.h */,
+				2900BB7D22FC0DD900F3344C /* YXPickerManager.h */,
+				2900BB8522FC0DD900F3344C /* YXPickerManager.m */,
+				2900BB8022FC0DD900F3344C /* YXAddressPickerView.h */,
+				2900BB7922FC0DD900F3344C /* YXAddressPickerView.m */,
+				2900BB8222FC0DD900F3344C /* YXDatePickerView.h */,
+				2900BB7B22FC0DD900F3344C /* YXDatePickerView.m */,
+				2900BB7C22FC0DD900F3344C /* YXCustomPickerView.h */,
+				2900BB8122FC0DD900F3344C /* YXCustomPickerView.m */,
+				292B8E8623014A3D008EB264 /* YXActionSheetViewController.h */,
+				292B8E8723014A3D008EB264 /* YXActionSheetViewController.m */,
+				292B8E8923014AC1008EB264 /* YXActionSheetTableViewCell.h */,
+				292B8E8A23014AC1008EB264 /* YXActionSheetTableViewCell.m */,
+				2900BB9022FC14A300F3344C /* Category */,
+				2900BB8E22FC0E1F00F3344C /* ToolBar */,
+				2900BB8D22FC0E1400F3344C /* Model */,
 			);
 			path = YXPickerView;
+			sourceTree = "<group>";
+		};
+		2900BB8D22FC0E1400F3344C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2900BB7F22FC0DD900F3344C /* YXCityModel.h */,
+				2900BB8322FC0DD900F3344C /* YXCityModel.m */,
+				292B8E8C23014AE4008EB264 /* YXActionSheetModel.h */,
+				292B8E8D23014AE4008EB264 /* YXActionSheetModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2900BB8E22FC0E1F00F3344C /* ToolBar */ = {
+			isa = PBXGroup;
+			children = (
+				2900BB8422FC0DD900F3344C /* YXToolbar.h */,
+				2900BB7E22FC0DD900F3344C /* YXToolbar.m */,
+			);
+			path = ToolBar;
+			sourceTree = "<group>";
+		};
+		2900BB9022FC14A300F3344C /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				2900BB9422FC14FE00F3344C /* NSDate+YXCategory.h */,
+				2900BB9522FC14FE00F3344C /* NSDate+YXCategory.m */,
+				292B8E8F23014C72008EB264 /* UIButton+Category.h */,
+				292B8E9023014C72008EB264 /* UIButton+Category.m */,
+				292B8E9223014FCA008EB264 /* NSString+Category.h */,
+				292B8E9323014FCA008EB264 /* NSString+Category.m */,
+			);
+			path = Category;
 			sourceTree = "<group>";
 		};
 		299321181F189972001DBDE3 = {
@@ -109,9 +165,9 @@
 		2993217A1F1C5440001DBDE3 /* demo */ = {
 			isa = PBXGroup;
 			children = (
-				2943F9091F1C6B4E000B5D94 /* YXPickerView */,
 				2993217B1F1C5440001DBDE3 /* AppDelegate.h */,
 				2993217C1F1C5440001DBDE3 /* AppDelegate.m */,
+				2900BB7822FC0DD900F3344C /* YXPickerView */,
 				2993217D1F1C5440001DBDE3 /* Assets.xcassets */,
 				2993217E1F1C5440001DBDE3 /* LaunchScreen.storyboard */,
 				299321801F1C5440001DBDE3 /* Main.storyboard */,
@@ -151,8 +207,6 @@
 				2993211D1F189972001DBDE3 /* Sources */,
 				2993211E1F189972001DBDE3 /* Frameworks */,
 				2993211F1F189972001DBDE3 /* Resources */,
-				6A4B10E669B3239A6B75AE8E /* [CP] Embed Pods Frameworks */,
-				31E87E450001FC0A4F4189AF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -174,7 +228,7 @@
 				TargetAttributes = {
 					299321201F189972001DBDE3 = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = 2G3393EZPN;
+						DevelopmentTeam = WT6YX73Z3N;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -204,7 +258,7 @@
 			files = (
 				2943F9081F1C5B82000B5D94 /* Podfile in Resources */,
 				299321941F1C5440001DBDE3 /* Info.plist in Resources */,
-				2943F9131F1C6B4E000B5D94 /* YXBundle.bundle in Resources */,
+				2900BB8722FC0DD900F3344C /* YXBundle.bundle in Resources */,
 				299321931F1C5440001DBDE3 /* Main.storyboard in Resources */,
 				299321911F1C5440001DBDE3 /* Assets.xcassets in Resources */,
 				299321921F1C5440001DBDE3 /* LaunchScreen.storyboard in Resources */,
@@ -220,43 +274,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-demo-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		31E87E450001FC0A4F4189AF /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-demo/Pods-demo-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		6A4B10E669B3239A6B75AE8E /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-demo/Pods-demo-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -266,15 +293,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2900BB8C22FC0DD900F3344C /* YXPickerManager.m in Sources */,
+				2900BB9622FC14FE00F3344C /* NSDate+YXCategory.m in Sources */,
+				292B8E8B23014AC1008EB264 /* YXActionSheetTableViewCell.m in Sources */,
+				2900BB8A22FC0DD900F3344C /* YXCustomPickerView.m in Sources */,
+				2900BB8822FC0DD900F3344C /* YXDatePickerView.m in Sources */,
+				2900BB8622FC0DD900F3344C /* YXAddressPickerView.m in Sources */,
+				2900BB8B22FC0DD900F3344C /* YXCityModel.m in Sources */,
 				299321961F1C5440001DBDE3 /* ViewController.m in Sources */,
-				2943F9161F1C6B4E000B5D94 /* YXAddressPickerView.m in Sources */,
-				2943F9171F1C6B4E000B5D94 /* YXToolbar.m in Sources */,
+				292B8E8823014A3D008EB264 /* YXActionSheetViewController.m in Sources */,
 				299321951F1C5440001DBDE3 /* main.m in Sources */,
+				292B8E8E23014AE4008EB264 /* YXActionSheetModel.m in Sources */,
+				292B8E9123014C72008EB264 /* UIButton+Category.m in Sources */,
+				2900BB8922FC0DD900F3344C /* YXToolbar.m in Sources */,
+				292B8E9423014FCA008EB264 /* NSString+Category.m in Sources */,
 				299321901F1C5440001DBDE3 /* AppDelegate.m in Sources */,
-				2943F91A1F1C6CF2000B5D94 /* YXDatePickerView.m in Sources */,
-				299366C11F74D7E9002057CB /* YXGeneralPickerView.m in Sources */,
-				2943F9151F1C6B4E000B5D94 /* YXPickerManager.m in Sources */,
-				2943F9141F1C6B4E000B5D94 /* YXCityModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,7 +430,7 @@
 			baseConfigurationReference = 791613E6FBB1DAC73DA1D29E /* Pods-demo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 2G3393EZPN;
+				DEVELOPMENT_TEAM = WT6YX73Z3N;
 				INFOPLIST_FILE = "$(SRCROOT)/demo/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -411,7 +444,7 @@
 			baseConfigurationReference = EF86096CEB7F4B2A60D896CF /* Pods-demo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 2G3393EZPN;
+				DEVELOPMENT_TEAM = WT6YX73Z3N;
 				INFOPLIST_FILE = "$(SRCROOT)/demo/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

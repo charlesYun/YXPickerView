@@ -9,9 +9,7 @@
 #import <Foundation/Foundation.h>
 
 
-
 @interface YXCityModel : NSObject
-
 
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *zipcode;

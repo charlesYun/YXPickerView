@@ -7,20 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "YXToolbar.h"
+#import "YXPickerViewHeader.h"
 
 @interface YXAddressPickerView : UIPickerView
 
-@property (nonatomic, strong) YXToolbar *toolbar;
-
 /**
  显示省市区选择框
-
- @param tintColor    主题颜色
+ 
  @param address      默认地址
- @param commitBlock  确认回调
- @param cancelBlock  取消回调
+ @param confirm      确认回调
+ @param cancel       取消回调
  */
-- (void)showAddressPickerView:(UIColor *)tintColor defaultAddress:(NSString *)address commitBlock:(void(^)(NSString *address,NSString *zipcode))commitBlock cancelBlock:(void(^)())cancelBlock;
+- (void)showAddressPickerViewSelected:(NSString *)address confirm:(void(^)(NSString *address,NSString *zipcode))confirm cancel:(CancelBlock)cancel;
 
 @end
