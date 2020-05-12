@@ -21,6 +21,9 @@
 		292B8E9123014C72008EB264 /* UIButton+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 292B8E9023014C72008EB264 /* UIButton+Category.m */; };
 		292B8E9423014FCA008EB264 /* NSString+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 292B8E9323014FCA008EB264 /* NSString+Category.m */; };
 		2943F9081F1C5B82000B5D94 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 2943F9071F1C5B82000B5D94 /* Podfile */; };
+		2985833C246A3AA200E37F09 /* YXCustomController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2985833B246A3AA200E37F09 /* YXCustomController.m */; };
+		2985833F246A417500E37F09 /* YXCustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2985833E246A417500E37F09 /* YXCustomTableViewCell.m */; };
+		29858346246A442500E37F09 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29858344246A442500E37F09 /* SecondViewController.m */; };
 		299321901F1C5440001DBDE3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2993217C1F1C5440001DBDE3 /* AppDelegate.m */; };
 		299321911F1C5440001DBDE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2993217D1F1C5440001DBDE3 /* Assets.xcassets */; };
 		299321921F1C5440001DBDE3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2993217E1F1C5440001DBDE3 /* LaunchScreen.storyboard */; };
@@ -59,6 +62,12 @@
 		292B8E9223014FCA008EB264 /* NSString+Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Category.h"; sourceTree = "<group>"; };
 		292B8E9323014FCA008EB264 /* NSString+Category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+Category.m"; sourceTree = "<group>"; };
 		2943F9071F1C5B82000B5D94 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		2985833A246A3AA200E37F09 /* YXCustomController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YXCustomController.h; sourceTree = "<group>"; };
+		2985833B246A3AA200E37F09 /* YXCustomController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YXCustomController.m; sourceTree = "<group>"; };
+		2985833D246A417500E37F09 /* YXCustomTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YXCustomTableViewCell.h; sourceTree = "<group>"; };
+		2985833E246A417500E37F09 /* YXCustomTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YXCustomTableViewCell.m; sourceTree = "<group>"; };
+		29858343246A442500E37F09 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		29858344246A442500E37F09 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		299321211F189972001DBDE3 /* demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2993217B1F1C5440001DBDE3 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2993217C1F1C5440001DBDE3 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -89,20 +98,13 @@
 		2900BB7822FC0DD900F3344C /* YXPickerView */ = {
 			isa = PBXGroup;
 			children = (
-				2900BB7A22FC0DD900F3344C /* YXBundle.bundle */,
-				2900BB8F22FC0E7F00F3344C /* YXPickerViewHeader.h */,
 				2900BB7D22FC0DD900F3344C /* YXPickerManager.h */,
 				2900BB8522FC0DD900F3344C /* YXPickerManager.m */,
-				2900BB8022FC0DD900F3344C /* YXAddressPickerView.h */,
-				2900BB7922FC0DD900F3344C /* YXAddressPickerView.m */,
-				2900BB8222FC0DD900F3344C /* YXDatePickerView.h */,
-				2900BB7B22FC0DD900F3344C /* YXDatePickerView.m */,
-				2900BB7C22FC0DD900F3344C /* YXCustomPickerView.h */,
-				2900BB8122FC0DD900F3344C /* YXCustomPickerView.m */,
-				292B8E8623014A3D008EB264 /* YXActionSheetViewController.h */,
-				292B8E8723014A3D008EB264 /* YXActionSheetViewController.m */,
-				292B8E8923014AC1008EB264 /* YXActionSheetTableViewCell.h */,
-				292B8E8A23014AC1008EB264 /* YXActionSheetTableViewCell.m */,
+				29858338246A396600E37F09 /* UIPickerView */,
+				29858337246A395900E37F09 /* UIDatePicker */,
+				29858336246A38FE00E37F09 /* Resource */,
+				29858339246A398100E37F09 /* Controller */,
+				29858335246A38D800E37F09 /* Cell */,
 				2900BB9022FC14A300F3344C /* Category */,
 				2900BB8E22FC0E1F00F3344C /* ToolBar */,
 				2900BB8D22FC0E1400F3344C /* Model */,
@@ -143,6 +145,57 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
+		29858335246A38D800E37F09 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				292B8E8923014AC1008EB264 /* YXActionSheetTableViewCell.h */,
+				292B8E8A23014AC1008EB264 /* YXActionSheetTableViewCell.m */,
+				2985833D246A417500E37F09 /* YXCustomTableViewCell.h */,
+				2985833E246A417500E37F09 /* YXCustomTableViewCell.m */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		29858336246A38FE00E37F09 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				2900BB7A22FC0DD900F3344C /* YXBundle.bundle */,
+				2900BB8F22FC0E7F00F3344C /* YXPickerViewHeader.h */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		29858337246A395900E37F09 /* UIDatePicker */ = {
+			isa = PBXGroup;
+			children = (
+				2900BB8222FC0DD900F3344C /* YXDatePickerView.h */,
+				2900BB7B22FC0DD900F3344C /* YXDatePickerView.m */,
+			);
+			path = UIDatePicker;
+			sourceTree = "<group>";
+		};
+		29858338246A396600E37F09 /* UIPickerView */ = {
+			isa = PBXGroup;
+			children = (
+				2900BB8022FC0DD900F3344C /* YXAddressPickerView.h */,
+				2900BB7922FC0DD900F3344C /* YXAddressPickerView.m */,
+				2900BB7C22FC0DD900F3344C /* YXCustomPickerView.h */,
+				2900BB8122FC0DD900F3344C /* YXCustomPickerView.m */,
+			);
+			path = UIPickerView;
+			sourceTree = "<group>";
+		};
+		29858339246A398100E37F09 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				292B8E8623014A3D008EB264 /* YXActionSheetViewController.h */,
+				292B8E8723014A3D008EB264 /* YXActionSheetViewController.m */,
+				2985833A246A3AA200E37F09 /* YXCustomController.h */,
+				2985833B246A3AA200E37F09 /* YXCustomController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		299321181F189972001DBDE3 = {
 			isa = PBXGroup;
 			children = (
@@ -175,6 +228,8 @@
 				299321831F1C5440001DBDE3 /* main.m */,
 				299321841F1C5440001DBDE3 /* ViewController.h */,
 				299321851F1C5440001DBDE3 /* ViewController.m */,
+				29858343246A442500E37F09 /* SecondViewController.h */,
+				29858344246A442500E37F09 /* SecondViewController.m */,
 			);
 			path = demo;
 			sourceTree = "<group>";
@@ -238,6 +293,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -293,9 +349,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29858346246A442500E37F09 /* SecondViewController.m in Sources */,
 				2900BB8C22FC0DD900F3344C /* YXPickerManager.m in Sources */,
 				2900BB9622FC14FE00F3344C /* NSDate+YXCategory.m in Sources */,
 				292B8E8B23014AC1008EB264 /* YXActionSheetTableViewCell.m in Sources */,
+				2985833F246A417500E37F09 /* YXCustomTableViewCell.m in Sources */,
 				2900BB8A22FC0DD900F3344C /* YXCustomPickerView.m in Sources */,
 				2900BB8822FC0DD900F3344C /* YXDatePickerView.m in Sources */,
 				2900BB8622FC0DD900F3344C /* YXAddressPickerView.m in Sources */,
@@ -308,6 +366,7 @@
 				2900BB8922FC0DD900F3344C /* YXToolbar.m in Sources */,
 				292B8E9423014FCA008EB264 /* NSString+Category.m in Sources */,
 				299321901F1C5440001DBDE3 /* AppDelegate.m in Sources */,
+				2985833C246A3AA200E37F09 /* YXCustomController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,7 +491,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = WT6YX73Z3N;
 				INFOPLIST_FILE = "$(SRCROOT)/demo/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com..YXPickerView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -446,7 +505,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = WT6YX73Z3N;
 				INFOPLIST_FILE = "$(SRCROOT)/demo/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com..YXPickerView;
 				PRODUCT_NAME = "$(TARGET_NAME)";

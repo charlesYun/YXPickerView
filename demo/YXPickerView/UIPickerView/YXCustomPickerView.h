@@ -20,4 +20,6 @@
  @param cancel          取消回调
  */
 - (void)showCustomPickerViewDataArray:(NSArray<NSString *> *)dataArray selectIndex:(NSInteger)selectIndex confirm:(void (^)(NSString *title,NSInteger index))confirm cancel:(CancelBlock)cancel;
+
+- (void)hiddenWithAnimation;
 @end

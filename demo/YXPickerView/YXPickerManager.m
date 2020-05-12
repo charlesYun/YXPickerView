@@ -145,6 +145,51 @@
     }];
 }
 
+/**
+ 自定义弹出框（UIView）
+
+ @param view UIView
+ @param cancel cancel
+ */
+- (void)showCustomView:(UIView *)view cancel:(CancelBlock)cancel {
+    if (cancel) {
+        [self.customView showCustomView:view showCancel:YES cancel:^{
+            self->_customView = nil;
+        }];
+    }else {
+        [self.customView showCustomView:view showCancel:NO cancel:^{
+            self->_customView = nil;
+        }];
+    }
+}
+
+/**
+ 自定义弹出框（UIViewController）
+
+ @param controller UIViewController
+ @param height UIViewController 高度
+ @param cancel cancel
+ */
+- (void)showCustomVc:(UIViewController *)controller contentHeight:(CGFloat)height cancel:(CancelBlock)cancel {
+    if (cancel) {
+        [self.customView showCustomVc:controller contentHeight:height showCancel:YES cancel:^{
+            self->_customView = nil;
+        }];
+    }else {
+        [self.customView showCustomVc:controller contentHeight:height showCancel:NO cancel:^{
+            self->_customView = nil;
+        }];
+    }
+}
+
+- (void)hiddenWithAnimation {
+    [self.addressPickerView hiddenWithAnimation];
+    [self.datePickerView hiddenWithAnimation];
+    [self.customPickerView hiddenWithAnimation];
+    [self.actionSheetView hiddenWithAnimation];
+    [self.customView hiddenWithAnimation];
+}
+
 #pragma mark - lazy
 - (YXAddressPickerView *)addressPickerView {
     if (!_addressPickerView) {
@@ -174,6 +219,12 @@
     return _actionSheetView;
 }
 
+- (YXCustomController *)customView {
+    if (!_customView) {
+        _customView = [[YXCustomController alloc] init];
+    }
+    return _customView;
+}
 
 
 

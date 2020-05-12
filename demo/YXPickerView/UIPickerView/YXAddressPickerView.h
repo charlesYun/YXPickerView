@@ -20,4 +20,5 @@
  */
 - (void)showAddressPickerViewSelected:(NSString *)address confirm:(void(^)(NSString *address,NSString *zipcode))confirm cancel:(CancelBlock)cancel;
 
+- (void)hiddenWithAnimation;
 @end

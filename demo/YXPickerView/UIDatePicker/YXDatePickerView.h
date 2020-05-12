@@ -55,5 +55,6 @@
  */
 - (void)showTimerPickerViewMinimumDate:(NSDate *)minimumDate maximumDate:(NSDate *)maximumDate defaultDate:(NSString *)defaultDate confirm:(DateConfirmBlock)confirm cancel:(CancelBlock)cancel;
 
+- (void)hiddenWithAnimation;
 
 @end

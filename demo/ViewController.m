@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import "YXPickerManager.h"
-
+#import "SecondViewController.h"
 @interface ViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextField *inputTextField;
@@ -100,11 +100,35 @@
             [[YXPickerManager shareManager] showActionSheetView:@[photoModel,cameraModel,viewModel] title:nil];
         }
             break;
+        case 7: {
+            UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 300, 300)];
+            view.backgroundColor = [UIColor redColor];
+            [[YXPickerManager shareManager] showCustomView:view cancel:^{
+                
+            }];
+        }
+            break;
+        case 8: {
+            SecondViewController *vc = [[SecondViewController alloc] init];
+            vc.title = @"测试";
+            UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+            
+            [[YXPickerManager shareManager] showCustomVc:nav contentHeight:400 cancel:^{
+                
+            }];
+        }
+            break;
         default:
             break;
     }
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 20;
+}
 
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return 0.01;
+}
 
 @end

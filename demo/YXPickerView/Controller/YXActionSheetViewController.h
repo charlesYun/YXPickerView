@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 - (void)showActionSheetView:(NSArray<YXActionSheetModel *> *)array title:(NSString *)title cancel:(CancelBlock)cancel;
-
+- (void)hiddenWithAnimation;
 @end
 
 NS_ASSUME_NONNULL_END
