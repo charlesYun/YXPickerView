@@ -104,7 +104,7 @@
             UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 300, 300)];
             view.backgroundColor = [UIColor redColor];
             [[YXPickerManager shareManager] showCustomView:view cancel:^{
-                
+                NSLog(@"取消");
             }];
         }
             break;
@@ -112,9 +112,8 @@
             SecondViewController *vc = [[SecondViewController alloc] init];
             vc.title = @"测试";
             UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
-            
             [[YXPickerManager shareManager] showCustomVc:nav contentHeight:400 cancel:^{
-                
+                NSLog(@"取消");
             }];
         }
             break;
