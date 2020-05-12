@@ -1,6 +1,6 @@
 ## YXPickerView
 
-###项目中经常会用到选择器，比如省市区选择、筛选项选择、日期选择、时间选择等等，此项目做了一个封装以方便使用。
+项目中经常会用到选择器，比如省市区选择、筛选项选择、日期选择、时间选择等等，此项目做了一个封装以方便使用。
 
 通过cocoapods找到它：`pod search YXPickerView`
 使用：
@@ -56,7 +56,7 @@ NSLog(@"取消");
 ```
 <img src="https://github.com/caoyunxiao/YXPickerView/blob/master/images/Simulator%20Screen%20Shot%20-%20iPhone%20XS%20-%202019-08-16%20at%2012.01.18.png"  height="667" width="375">
 
-#### 5、仿微信弹框
+#### 6、仿微信弹框
 ```objective-c
 YXActionSheetModel *photoModel = [YXActionSheetModel title:@"相册" color:[UIColor blackColor]];
 [photoModel setClickBlock:^(NSInteger index) {
@@ -76,4 +76,18 @@ YXActionSheetModel *viewModel = [YXActionSheetModel title:@"查看大图" color:
 
 <img src="https://github.com/caoyunxiao/YXPickerView/blob/master/images/Simulator%20Screen%20Shot%20-%20iPhone%20XS%20-%202019-08-16%20at%2012.01.22.png"  height="667" width="375">
 
+#### 7、自定义UIView、UIViewController
+```objective-c
+UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 300, 300)];
+view.backgroundColor = [UIColor redColor];
+[[YXPickerManager shareManager] showCustomView:view cancel:^{
+    NSLog(@"取消");
+}];
+SecondViewController *vc = [[SecondViewController alloc] init];
+vc.title = @"测试";
+UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+[[YXPickerManager shareManager] showCustomVc:nav contentHeight:400 cancel:^{
+    NSLog(@"取消");
+}];
+```
 ### End
