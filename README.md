@@ -90,4 +90,8 @@ UINavigationController *nav = [[UINavigationController alloc] initWithRootViewCo
     NSLog(@"取消");
 }];
 ```
+<img src="https://github.com/caoyunxiao/YXPickerView/blob/master/images/Simulator%20Screen%20Shot%20-%20iPhone%208%20-%202020-05-12%20at%2011.39.25.png"  height="667" width="375">
+
+<img src="https://github.com/caoyunxiao/YXPickerView/blob/master/images/Simulator%20Screen%20Shot%20-%20iPhone%208%20-%202020-05-12%20at%2011.39.28.png"  height="667" width="375">
+
 ### End
