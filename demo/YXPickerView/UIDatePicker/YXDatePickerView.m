@@ -9,7 +9,7 @@
 #import "YXDatePickerView.h"
 #import "YXToolbar.h"
 
-@interface YXDatePickerView()
+@interface YXDatePickerView ()
 
 @property (nonatomic, strong) YXToolbar *toolbar;
 @property (nonatomic, strong) UIView *bgView;
@@ -26,7 +26,7 @@
         self.backgroundColor = [UIColor whiteColor];
         self.autoresizingMask = UIViewAutoresizingFlexibleWidth;
         NSLocale *locale = [[NSLocale alloc] initWithLocaleIdentifier:@"zh_CN"];
-        self.locale = [YXPickerManager shareManager].locale ?: locale;
+        self.locale = [YXPickerManager shareManager].locale ? : locale;
     }
     return self;
 }
@@ -77,21 +77,26 @@
                 self.date = [NSDate dateFormatHHmmss:defaultDate];
             }
         }
-            break;
+        break;
         case UIDatePickerModeDate: {
             if (defaultDate) {
                 self.date = [NSDate dateFormatyyyyMMdd:defaultDate];
             }
         }
-            break;
+        break;
         case UIDatePickerModeDateAndTime: {
             if (defaultDate) {
                 self.date = [NSDate dateFormatyyyyMMddHHmmss:defaultDate];
             }
         }
-            break;
+        break;
         default:
             break;
+    }
+    if (@available(iOS 13.4, *)) {
+        self.preferredDatePickerStyle = UIDatePickerStyleWheels;
+    } else {
+        // Fallback on earlier versions
     }
     self.datePickerMode = model;
     self.minimumDate = minimumDate;
@@ -99,7 +104,7 @@
     self.cancelBlock = cancel;
     [self showWithAnimation];
     __weak typeof(self) weakSelf = self;
-    self.toolbar.cancelBlock = ^ {
+    self.toolbar.cancelBlock = ^{
         [weakSelf hiddenWithAnimation];
         if (cancel) {
             cancel();
@@ -110,19 +115,19 @@
         if (confirm) {
             switch (model) {
                 case UIDatePickerModeTime: {
-                    confirm([NSDate strFormatHHmmss:weakSelf.date],weakSelf.date);
+                    confirm([NSDate strFormatHHmmss:weakSelf.date], weakSelf.date);
                 }
-                    break;
+                break;
                 case UIDatePickerModeDate: {
-                    confirm([NSDate strFormatyyyyMMdd:weakSelf.date],weakSelf.date);
+                    confirm([NSDate strFormatyyyyMMdd:weakSelf.date], weakSelf.date);
                 }
-                    break;
+                break;
                 case UIDatePickerModeDateAndTime: {
-                    confirm([NSDate strFormatyyyyMMddHHmmss:weakSelf.date],weakSelf.date);
+                    confirm([NSDate strFormatyyyyMMddHHmmss:weakSelf.date], weakSelf.date);
                 }
-                    break;
+                break;
                 default:
-                    confirm([NSDate strFormatyyyyMMddHHmmss:weakSelf.date],weakSelf.date);
+                    confirm([NSDate strFormatyyyyMMddHHmmss:weakSelf.date], weakSelf.date);
                     break;
             }
         }
@@ -131,7 +136,7 @@
 
 /**
  显示时间选择框（UIDatePickerModeDateAndTime）
- 
+
  @param minimumDate  最小时间
  @param maximumDate  最大时间
  @param defaultDate  默认时间
@@ -144,7 +149,7 @@
 
 /**
  显示时间选择框（UIDatePickerModeTime）
- 
+
  @param minimumDate  最小时间
  @param maximumDate  最大时间
  @param defaultDate  默认时间
@@ -157,7 +162,7 @@
 
 /**
  显示时间选择框（UIDatePickerModeDate）
- 
+
  @param minimumDate  最小时间
  @param maximumDate  最大时间
  @param defaultDate  默认时间
@@ -170,7 +175,7 @@
 
 /**
  显示时间选择框（UIDatePickerModeCountDownTimer）
- 
+
  @param minimumDate  最小时间
  @param maximumDate  最大时间
  @param defaultDate  默认时间
@@ -185,6 +190,7 @@
 - (UIView *)bgView {
     if (!_bgView) {
         _bgView = [[UIView alloc] initWithFrame:CGRectMake(0, kScreenHeight - self.frame.size.height - kToolbarRect.size.height, kScreenWidth, self.frame.size.height + kToolbarRect.size.height)];
+        _bgView.backgroundColor = [UIColor whiteColor];
     }
     return _bgView;
 }
@@ -206,15 +212,5 @@
     }
     return _containerView;
 }
-
-
-
-
-
-
-
-
-
-
 
 @end

@@ -283,7 +283,7 @@
 				TargetAttributes = {
 					299321201F189972001DBDE3 = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = WT6YX73Z3N;
+						DevelopmentTeam = BX89G3F8M3;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -489,7 +489,7 @@
 			baseConfigurationReference = 791613E6FBB1DAC73DA1D29E /* Pods-demo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = WT6YX73Z3N;
+				DEVELOPMENT_TEAM = BX89G3F8M3;
 				INFOPLIST_FILE = "$(SRCROOT)/demo/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
