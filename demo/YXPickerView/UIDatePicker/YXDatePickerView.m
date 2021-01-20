@@ -99,6 +99,7 @@
         // Fallback on earlier versions
     }
     self.datePickerMode = model;
+    self.frame = kYXPickerRect;
     self.minimumDate = minimumDate;
     self.maximumDate = maximumDate;
     self.cancelBlock = cancel;
