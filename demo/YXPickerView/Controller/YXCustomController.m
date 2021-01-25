@@ -18,6 +18,7 @@
 @property (nonatomic, strong) UIView *bgView;
 @property (nonatomic, strong) UIView *contentView;
 @property (nonatomic, assign) CGFloat contentHeight;
+@property (nonatomic, assign) BOOL showCancel;
 @property (nonatomic, copy) CancelBlock cancelBlock;
 
 
@@ -41,7 +42,7 @@
 - (void)addViews {
     UIWindow *window = [UIApplication sharedApplication].keyWindow;
     [window addSubview:self.bgView];
-    CGFloat height = (self.contentHeight ?: self.contentView.frame.size.height) + (self.cancelBlock ? kRowHeight : 0) + (kIPHONE_BOTTOMSAFEAREA);
+    CGFloat height = (self.contentHeight ?: self.contentView.frame.size.height) + (self.showCancel ? kRowHeight : 0) + (kIPHONE_BOTTOMSAFEAREA);
     if (height > kScreenHeight - 100 ) {
         height = kScreenHeight - 100;
         _actionTableView.scrollEnabled = YES;
@@ -93,6 +94,7 @@
         YXActionSheetModel *cancelModel = [YXActionSheetModel title:@"取消" color:[UIColor blackColor]];
         [self.datasArray addObject:@[cancelModel]];
     }
+    self.showCancel = showCancel;
     self.cancelBlock = cancel;
     self.contentView = view;
     [self showWithAnimation];
@@ -107,6 +109,7 @@
         YXActionSheetModel *cancelModel = [YXActionSheetModel title:@"取消" color:[UIColor blackColor]];
         [self.datasArray addObject:@[cancelModel]];
     }
+    self.showCancel = showCancel;
     self.cancelBlock = cancel;
     self.contentView = controller.view;
     self.contentHeight = height;
@@ -148,7 +151,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
-        return self.view.frame.size.height - (self.cancelBlock ? kRowHeight : 0) - (kIPHONE_BOTTOMSAFEAREA);
+        return self.view.frame.size.height - (self.showCancel ? kRowHeight : 0) - (kIPHONE_BOTTOMSAFEAREA);
     }
     return kRowHeight;
 }
