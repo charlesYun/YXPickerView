@@ -24,6 +24,8 @@
 
 /***************************可自定义属性***************************/
 
+//背景颜色
+@property (nonatomic, strong) UIColor *bgColor;
 //取消按钮文字颜色
 @property (nonatomic, strong) UIColor *cancelColor;
 //取消按钮文字

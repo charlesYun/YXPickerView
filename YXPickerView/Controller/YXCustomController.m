@@ -10,6 +10,8 @@
 #import "YXActionSheetModel.h"
 #import "YXActionSheetTableViewCell.h"
 #import "YXCustomTableViewCell.h"
+#import "YXPickerViewHeader.h"
+#import "YXPickerManager.h"
 
 @interface YXCustomController ()<UIGestureRecognizerDelegate,UITableViewDelegate,UITableViewDataSource>
 
@@ -126,6 +128,8 @@
     [self.actionTableView setSeparatorInset:UIEdgeInsetsMake(0, 0, 0, 0)];
     self.actionTableView.showsVerticalScrollIndicator = NO;
     self.actionTableView.showsHorizontalScrollIndicator = NO;
+    self.actionTableView.backgroundColor = kYXPickerManager.bgColor;
+    self.actionTableView.separatorStyle = UITableViewCellAccessoryNone;
     [self.actionTableView registerClass:YXActionSheetTableViewCell.class forCellReuseIdentifier:@"YXActionSheetTableViewCell"];
     [self.actionTableView registerClass:YXCustomTableViewCell.class forCellReuseIdentifier:@"YXCustomTableViewCell"];
 }

@@ -15,10 +15,10 @@ typedef void(^DateConfirmBlock)(NSString *dateStr, NSDate *date);
 typedef void(^ClickBlock)(NSInteger index);
 
 #define kYXPickerManager [YXPickerManager shareManager]
-#define kScreenHeight   ([UIScreen mainScreen].bounds.size.height)
-#define kScreenWidth    ([UIScreen mainScreen].bounds.size.width)
-#define kToolbarRect    CGRectMake(0, 0, kScreenWidth, 44)
-#define kYXPickerRect   CGRectMake(0, kToolbarRect.size.height, kScreenWidth, 216)
+#define kYXScreenHeight   ([UIScreen mainScreen].bounds.size.height)
+#define kYXScreenWidth    ([UIScreen mainScreen].bounds.size.width)
+#define kToolbarRect    CGRectMake(0, 0, kYXScreenWidth, 44)
+#define kYXPickerRect   CGRectMake(0, kToolbarRect.size.height, kYXScreenWidth, 216)
 #define kLineColor      [UIColor colorWithRed:0.804  green:0.804  blue:0.804 alpha:0.5]
 #define kClickBgColor   [UIColor colorWithRed:0.94 green:0.94 blue:0.94 alpha:0.9]
 #define kRowHeight      55

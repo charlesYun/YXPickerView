@@ -41,13 +41,13 @@
     UIWindow *window = [UIApplication sharedApplication].keyWindow;
     [window addSubview:self.bgView];
     CGFloat height = (self.datasArray[0].count + 1) * kRowHeight + kHeaderSectionH + (kIPHONE_BOTTOMSAFEAREA);
-    if (height > kScreenHeight - 100 ) {
-        height = kScreenHeight - 100;
+    if (height > kYXScreenHeight - 100 ) {
+        height = kYXScreenHeight - 100;
         _actionTableView.scrollEnabled = YES;
     }else {
         _actionTableView.scrollEnabled = NO ;
     }
-    self.view.frame = CGRectMake(0, kScreenHeight, kScreenWidth, height + self.headerHeight);
+    self.view.frame = CGRectMake(0, kYXScreenHeight, kYXScreenWidth, height + self.headerHeight);
     UIBezierPath* rounded = [UIBezierPath bezierPathWithRoundedRect:self.view.bounds byRoundingCorners:UIRectCornerTopLeft | UIRectCornerTopRight cornerRadii:CGSizeMake(15, 15)];
     CAShapeLayer* shape = [[CAShapeLayer alloc] init];
     [shape setPath:rounded.CGPath];
@@ -66,7 +66,7 @@
     [UIView animateWithDuration:0.25 animations:^{
         self.bgView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.3];
         CGRect frame = self.view.frame;
-        frame.origin.y = kScreenHeight - self.view.frame.size.height;
+        frame.origin.y = kYXScreenHeight - self.view.frame.size.height;
         self.view.frame = frame;
     }];
 }
@@ -75,7 +75,7 @@
     [UIView animateWithDuration:0.25 animations:^{
         self.bgView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.0];
         CGRect frame = self.view.frame;
-        frame.origin.y = kScreenHeight;
+        frame.origin.y = kYXScreenHeight;
         self.view.frame = frame;
     } completion:^(BOOL finished) {
         [self hiddenViews];
@@ -92,14 +92,14 @@
     self.cancelBlock = cancel;
     UIView *headerView = nil;
     if (title) {
-        CGSize size = [title heightWithWidth:kScreenWidth - 100 andFont:[UIFont systemFontOfSize:16]];
+        CGSize size = [title heightWithWidth:kYXScreenWidth - 100 andFont:[UIFont systemFontOfSize:16]];
         UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height)];
         label.numberOfLines = 0;
         label.textAlignment = NSTextAlignmentCenter;
         label.font = [UIFont systemFontOfSize:16];
         label.text = title;
         label.textColor = [UIColor grayColor];
-        headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, size.height + 30)];
+        headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kYXScreenWidth, size.height + 30)];
         headerView.backgroundColor = [UIColor whiteColor];
         [headerView addSubview:label];
         label.center = headerView.center;
@@ -170,7 +170,7 @@
 #pragma mark - lazy
 - (UITableView *)actionTableView {
     if (!_actionTableView) {
-        _actionTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight) style:UITableViewStyleGrouped];
+        _actionTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kYXScreenWidth, kYXScreenHeight) style:UITableViewStyleGrouped];
         _actionTableView.delegate = self;
         _actionTableView.dataSource = self;
         _actionTableView.scrollEnabled = NO;

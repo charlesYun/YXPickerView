@@ -44,7 +44,7 @@
         self.items = @[leftFixBar,self.cancelButtonItem,spaceItem,self.titleButtonItem,spaceItem,self.commitButtonItem,rightFixBar];
         
         if (![YXPickerManager shareManager].lineHide) {
-            UIView *bottomLineView = [[UIView alloc] initWithFrame:CGRectMake(0, kToolbarRect.size.height - 0.5, kScreenWidth, 0.5)];
+            UIView *bottomLineView = [[UIView alloc] initWithFrame:CGRectMake(0, kToolbarRect.size.height - 0.5, kYXScreenWidth, 0.5)];
             bottomLineView.backgroundColor = [YXPickerManager shareManager].lineColor ?: kLineColor;
             [self addSubview:bottomLineView];
             [self bringSubviewToFront:bottomLineView];

@@ -10,7 +10,7 @@
 #import "YXActionSheetTableViewCell.h"
 #import "YXPickerViewHeader.h"
 #import "NSString+Category.h"
-
+#import "YXPickerManager.h"
 
 @interface YXActionSheetViewController ()<UITableViewDataSource,UITableViewDelegate,UIGestureRecognizerDelegate>
 
@@ -118,6 +118,7 @@
     self.actionTableView.estimatedSectionHeaderHeight = 0;
     self.actionTableView.estimatedSectionFooterHeight = 0;
     [self.actionTableView setSeparatorInset:UIEdgeInsetsMake(0, 0, 0, 0)];
+    self.actionTableView.backgroundColor = kYXPickerManager.bgColor;
     [self.actionTableView registerClass:YXActionSheetTableViewCell.class forCellReuseIdentifier:@"YXActionSheetTableViewCell"];
 }
 

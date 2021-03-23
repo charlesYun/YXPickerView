@@ -58,9 +58,9 @@
     [self addViews];
     self.containerView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.0];
     CGFloat height = self.bgView.frame.size.height;
-    self.bgView.center = CGPointMake(kScreenWidth / 2, kScreenHeight + height / 2);
+    self.bgView.center = CGPointMake(kYXScreenWidth / 2, kYXScreenHeight + height / 2);
     [UIView animateWithDuration:0.25 animations:^{
-        self.bgView.center = CGPointMake(kScreenWidth / 2, kScreenHeight - height / 2);
+        self.bgView.center = CGPointMake(kYXScreenWidth / 2, kYXScreenHeight - height / 2);
         self.containerView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.4];
     }];
 }
@@ -68,7 +68,7 @@
 - (void)hiddenWithAnimation {
     CGFloat height = self.bgView.frame.size.height;
     [UIView animateWithDuration:0.25 animations:^{
-        self.bgView.center = CGPointMake(kScreenWidth / 2, kScreenHeight + height / 2);
+        self.bgView.center = CGPointMake(kYXScreenWidth / 2, kYXScreenHeight + height / 2);
         self.containerView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.0];
     } completion:^(BOOL finished) {
         [self hiddenViews];
@@ -287,14 +287,14 @@
 
 - (UIView *)bgView {
     if (!_bgView) {
-        _bgView = [[UIView alloc] initWithFrame:CGRectMake(0, kScreenHeight - self.frame.size.height - kToolbarRect.size.height, kScreenWidth, self.frame.size.height + kToolbarRect.size.height)];
+        _bgView = [[UIView alloc] initWithFrame:CGRectMake(0, kYXScreenHeight - self.frame.size.height - kToolbarRect.size.height, kYXScreenWidth, self.frame.size.height + kToolbarRect.size.height)];
     }
     return _bgView;
 }
 
 - (YXToolbar *)toolbar {
     if (!_toolbar) {
-        _toolbar = [[YXToolbar alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kToolbarRect.size.height)];
+        _toolbar = [[YXToolbar alloc] initWithFrame:CGRectMake(0, 0, kYXScreenWidth, kToolbarRect.size.height)];
         _toolbar.translucent = NO;
     }
     return _toolbar;
@@ -302,7 +302,7 @@
 
 - (UIView *)containerView {
     if (!_containerView) {
-        _containerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight)];
+        _containerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kYXScreenWidth, kYXScreenHeight)];
         _containerView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.4];
         _containerView.userInteractionEnabled = YES;
         [_containerView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hiddenWithAnimation)]];

@@ -25,7 +25,7 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:kYXPickerRect];
     if (self) {
-        self.backgroundColor = [UIColor whiteColor];
+        self.backgroundColor = kYXPickerManager.bgColor;
         self.delegate = self;
         self.dataSource = self;
         self.autoresizingMask = UIViewAutoresizingFlexibleWidth;

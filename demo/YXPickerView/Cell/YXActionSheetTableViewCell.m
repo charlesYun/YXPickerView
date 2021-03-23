@@ -27,7 +27,7 @@
         _button.titleLabel.font = [UIFont boldSystemFontOfSize:15];
         [_button setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
         [_button horizontalCenterImageAndTitle:10];
-        _button.frame = CGRectMake(0, 0, kScreenWidth, kRowHeight);
+        _button.frame = CGRectMake(0, 0, kYXScreenWidth, kRowHeight);
         [self.contentView addSubview:_button];
     }
     return self;

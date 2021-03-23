@@ -43,13 +43,13 @@
     UIWindow *window = [UIApplication sharedApplication].keyWindow;
     [window addSubview:self.bgView];
     CGFloat height = (self.contentHeight ?: self.contentView.frame.size.height) + (self.showCancel ? kRowHeight : 0) + (kIPHONE_BOTTOMSAFEAREA);
-    if (height > kScreenHeight - 100 ) {
-        height = kScreenHeight - 100;
+    if (height > kYXScreenHeight - 100 ) {
+        height = kYXScreenHeight - 100;
         _actionTableView.scrollEnabled = YES;
     }else {
         _actionTableView.scrollEnabled = NO ;
     }
-    self.view.frame = CGRectMake(0, kScreenHeight, kScreenWidth, height);
+    self.view.frame = CGRectMake(0, kYXScreenHeight, kYXScreenWidth, height);
     UIBezierPath* rounded = [UIBezierPath bezierPathWithRoundedRect:self.view.bounds byRoundingCorners:UIRectCornerTopLeft | UIRectCornerTopRight cornerRadii:CGSizeMake(15, 15)];
     CAShapeLayer* shape = [[CAShapeLayer alloc] init];
     [shape setPath:rounded.CGPath];
@@ -68,7 +68,7 @@
     [UIView animateWithDuration:0.25 animations:^{
         self.bgView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.3];
         CGRect frame = self.view.frame;
-        frame.origin.y = kScreenHeight - self.view.frame.size.height;
+        frame.origin.y = kYXScreenHeight - self.view.frame.size.height;
         self.view.frame = frame;
     }];
 }
@@ -77,7 +77,7 @@
     [UIView animateWithDuration:0.25 animations:^{
         self.bgView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.0];
         CGRect frame = self.view.frame;
-        frame.origin.y = kScreenHeight;
+        frame.origin.y = kYXScreenHeight;
         self.view.frame = frame;
     } completion:^(BOOL finished) {
         [self hiddenViews];
@@ -190,7 +190,7 @@
 #pragma mark - lazy
 - (UITableView *)actionTableView {
     if (!_actionTableView) {
-        _actionTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight) style:UITableViewStyleGrouped];
+        _actionTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kYXScreenWidth, kYXScreenHeight) style:UITableViewStyleGrouped];
         _actionTableView.delegate = self;
         _actionTableView.dataSource = self;
         _actionTableView.scrollEnabled = NO;

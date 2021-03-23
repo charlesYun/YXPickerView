@@ -23,7 +23,7 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:kYXPickerRect];
     if (self) {
-        self.backgroundColor = [UIColor whiteColor];
+        self.backgroundColor = kYXPickerManager.bgColor;
         self.autoresizingMask = UIViewAutoresizingFlexibleWidth;
         NSLocale *locale = [[NSLocale alloc] initWithLocaleIdentifier:@"zh_CN"];
         self.locale = [YXPickerManager shareManager].locale ? : locale;
