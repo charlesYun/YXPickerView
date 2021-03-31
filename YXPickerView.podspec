@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "YXPickerView"
-  s.version      = "1.2.1"
+  s.version      = "1.2.2"
   s.summary      = "省市区选择、筛选项选择、日期选择、时间选择等等"
   s.description  = <<-DESC
                     项目中经常会用到选择器，比如省市区选择、筛选项选择、日期选择、时间选择等等，此项目做了一个封装以方便使用。

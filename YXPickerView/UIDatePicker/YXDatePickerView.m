@@ -23,7 +23,6 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:kYXPickerRect];
     if (self) {
-        self.backgroundColor = kYXPickerManager.bgColor;
         self.autoresizingMask = UIViewAutoresizingFlexibleWidth;
         NSLocale *locale = [[NSLocale alloc] initWithLocaleIdentifier:@"zh_CN"];
         self.locale = [YXPickerManager shareManager].locale ? : locale;
@@ -191,7 +190,7 @@
 - (UIView *)bgView {
     if (!_bgView) {
         _bgView = [[UIView alloc] initWithFrame:CGRectMake(0, kScreenHeight - self.frame.size.height - kToolbarRect.size.height, kScreenWidth, self.frame.size.height + kToolbarRect.size.height)];
-        _bgView.backgroundColor = [UIColor whiteColor];
+        _bgView.backgroundColor = kYXPickerManager.bgColor;
     }
     return _bgView;
 }
